@@ -12,6 +12,7 @@
 		E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0221F3DFB300CA12E6 /* Main.storyboard */; };
 		E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */; };
 		E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0721F3DFB400CA12E6 /* LaunchScreen.storyboard */; };
+		E3D84B1121F3E65000CA12E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D84B0821F3DFB400CA12E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3D84B0A21F3DFB400CA12E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */,
 				E3D84B0721F3DFB400CA12E6 /* LaunchScreen.storyboard */,
 				E3D84B0A21F3DFB400CA12E6 /* Info.plist */,
+				E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */,
 			);
 			path = MoreMocha;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */,
+				E3D84B1121F3E65000CA12E6 /* GoogleService-Info.plist in Resources */,
 				E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */,
 				E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */,
 			);
