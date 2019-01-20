@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CF05B950353769A4399D6CE /* Pods_MoreMocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3B340C32F1733C8AB0DF30 /* Pods_MoreMocha.framework */; };
+		E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3750F5E21F418D0001690BE /* GoogleService-Info.plist */; };
+		E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3750F6221F4195E001690BE /* ColorConverter.swift */; };
+		E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3750F6521F41A94001690BE /* bagOfCoffee.jpg */; };
 		E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */; };
-		E3D84B0121F3DFB300CA12E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84B0021F3DFB300CA12E6 /* ViewController.swift */; };
+		E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */; };
 		E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0221F3DFB300CA12E6 /* Main.storyboard */; };
 		E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */; };
 		E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0721F3DFB400CA12E6 /* LaunchScreen.storyboard */; };
-		E3D84B1121F3E65000CA12E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082629F4633EA1A2464EFF79 /* Pods-MoreMocha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreMocha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha.debug.xcconfig"; sourceTree = "<group>"; };
+		8BA3523AF63B36FEE401CC77 /* Pods-MoreMocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreMocha.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha.release.xcconfig"; sourceTree = "<group>"; };
+		DD3B340C32F1733C8AB0DF30 /* Pods_MoreMocha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreMocha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3750F5E21F418D0001690BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3750F6221F4195E001690BE /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
+		E3750F6521F41A94001690BE /* bagOfCoffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bagOfCoffee.jpg; sourceTree = "<group>"; };
 		E3D84AFB21F3DFB300CA12E6 /* MoreMocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreMocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3D84B0021F3DFB300CA12E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewController.swift; sourceTree = "<group>"; };
 		E3D84B0321F3DFB300CA12E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D84B0821F3DFB400CA12E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3D84B0A21F3DFB400CA12E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF05B950353769A4399D6CE /* Pods_MoreMocha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		981531A17C5CBD15E424685E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD3B340C32F1733C8AB0DF30 /* Pods_MoreMocha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3750F5B21F41759001690BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3750F6421F41A75001690BE /* LocalImages */,
+				E3D84B0721F3DFB400CA12E6 /* LaunchScreen.storyboard */,
+				E3D84B0221F3DFB300CA12E6 /* Main.storyboard */,
+				E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */,
+				E3D84B0A21F3DFB400CA12E6 /* Info.plist */,
+				E3750F5E21F418D0001690BE /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E3750F6021F4192E001690BE /* SelectCoffeeModule */ = {
+			isa = PBXGroup;
+			children = (
+				E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */,
+			);
+			path = SelectCoffeeModule;
+			sourceTree = "<group>";
+		};
+		E3750F6121F4193D001690BE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E3750F6221F4195E001690BE /* ColorConverter.swift */,
+			);
+			name = Helpers;
+			path = ../Helpers;
+			sourceTree = "<group>";
+		};
+		E3750F6421F41A75001690BE /* LocalImages */ = {
+			isa = PBXGroup;
+			children = (
+				E3750F6521F41A94001690BE /* bagOfCoffee.jpg */,
+			);
+			path = LocalImages;
+			sourceTree = "<group>";
+		};
 		E3D84AF221F3DFB300CA12E6 = {
 			isa = PBXGroup;
 			children = (
 				E3D84AFD21F3DFB300CA12E6 /* MoreMocha */,
 				E3D84AFC21F3DFB300CA12E6 /* Products */,
+				F30BA5A4ECEF54D89D43FEF5 /* Pods */,
+				981531A17C5CBD15E424685E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +114,20 @@
 			isa = PBXGroup;
 			children = (
 				E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */,
-				E3D84B0021F3DFB300CA12E6 /* ViewController.swift */,
-				E3D84B0221F3DFB300CA12E6 /* Main.storyboard */,
-				E3D84B0521F3DFB400CA12E6 /* Assets.xcassets */,
-				E3D84B0721F3DFB400CA12E6 /* LaunchScreen.storyboard */,
-				E3D84B0A21F3DFB400CA12E6 /* Info.plist */,
-				E3D84B1021F3E65000CA12E6 /* GoogleService-Info.plist */,
+				E3750F6021F4192E001690BE /* SelectCoffeeModule */,
+				E3750F6121F4193D001690BE /* Helpers */,
+				E3750F5B21F41759001690BE /* Resources */,
 			);
 			path = MoreMocha;
+			sourceTree = "<group>";
+		};
+		F30BA5A4ECEF54D89D43FEF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				082629F4633EA1A2464EFF79 /* Pods-MoreMocha.debug.xcconfig */,
+				8BA3523AF63B36FEE401CC77 /* Pods-MoreMocha.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D84B0D21F3DFB400CA12E6 /* Build configuration list for PBXNativeTarget "MoreMocha" */;
 			buildPhases = (
+				6BD5756A527BD3A48C40F39E /* [CP] Check Pods Manifest.lock */,
 				E3D84AF721F3DFB300CA12E6 /* Sources */,
 				E3D84AF821F3DFB300CA12E6 /* Frameworks */,
 				E3D84AF921F3DFB300CA12E6 /* Resources */,
+				CFBA5E14319D009F797A4C8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,20 +191,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */,
-				E3D84B1121F3E65000CA12E6 /* GoogleService-Info.plist in Resources */,
+				E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */,
 				E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */,
+				E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */,
 				E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6BD5756A527BD3A48C40F39E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoreMocha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFBA5E14319D009F797A4C8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3D84AF721F3DFB300CA12E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D84B0121F3DFB300CA12E6 /* ViewController.swift in Sources */,
+				E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */,
+				E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */,
 				E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,11 +392,12 @@
 		};
 		E3D84B0E21F3DFB400CA12E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082629F4633EA1A2464EFF79 /* Pods-MoreMocha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L6W8T37HH;
-				INFOPLIST_FILE = MoreMocha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MoreMocha/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +411,12 @@
 		};
 		E3D84B0F21F3DFB400CA12E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BA3523AF63B36FEE401CC77 /* Pods-MoreMocha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L6W8T37HH;
-				INFOPLIST_FILE = MoreMocha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MoreMocha/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
