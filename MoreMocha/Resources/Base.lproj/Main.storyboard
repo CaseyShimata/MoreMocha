@@ -23,28 +23,165 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emE-uj-U0V">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test title dummy data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
+                                                <rect key="frame" x="47" y="46.5" width="281" height="113.5"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cMs-lW-yps" secondAttribute="bottom" constant="20" id="1zs-bU-a1N"/>
+                                            <constraint firstItem="cMs-lW-yps" firstAttribute="centerX" secondItem="emE-uj-U0V" secondAttribute="centerX" id="khX-uv-Fn3"/>
+                                            <constraint firstItem="cMs-lW-yps" firstAttribute="width" secondItem="emE-uj-U0V" secondAttribute="width" multiplier="0.75" id="ox2-ym-uv4"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-xh-oa7">
                                         <rect key="frame" x="0.0" y="180" width="375" height="67"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bold: attributed test data, order info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-Iz-9De">
+                                                <rect key="frame" x="20" y="15" width="335" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mBP-Iz-9De" firstAttribute="top" secondItem="uI3-xh-oa7" secondAttribute="top" constant="15" id="Bup-Fx-fTQ"/>
+                                            <constraint firstItem="mBP-Iz-9De" firstAttribute="leading" secondItem="uI3-xh-oa7" secondAttribute="leading" constant="20" id="OFg-rS-i3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="mBP-Iz-9De" secondAttribute="trailing" constant="20" id="rFn-Sg-8FC"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsv-VY-bOG">
                                         <rect key="frame" x="0.0" y="247" width="375" height="220"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-g9-4Em">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="0.0" id="lf9-64-SsY">
+                                                    <size key="itemSize" width="150" height="150"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="115" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectCoffeeCell" id="CJP-A6-lg9" customClass="SelectCoffeeCollectionViewCell" customModule="MoreMocha" customModuleProvider="target">
+                                                        <rect key="frame" x="115" y="35" width="150" height="150"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jacobs-wonderbar_46033470694_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-m2-zco">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                </imageView>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urV-qp-Bag">
+                                                                    <rect key="frame" x="69" y="86.5" width="60" height="60"/>
+                                                                    <color key="backgroundColor" red="0.32933053374290466" green="0.16593506932258606" blue="0.029720708727836609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="Wbf-V2-Gyu"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="kub-iM-ZrB"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
+                                                                    <state key="normal" title="Customize">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="30"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="didClickCustomize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHP-na-Qe5"/>
+                                                                        <action selector="didSelectCustomizeButton:" destination="CJP-A6-lg9" eventType="touchUpInside" id="FdP-vo-xUj"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="DxD-m2-zco" firstAttribute="height" secondItem="CJP-A6-lg9" secondAttribute="height" id="IHu-Lh-37T"/>
+                                                            <constraint firstItem="urV-qp-Bag" firstAttribute="centerX" secondItem="DxD-m2-zco" secondAttribute="centerX" multiplier="1.32" id="TJ0-Nt-iZz"/>
+                                                            <constraint firstItem="DxD-m2-zco" firstAttribute="width" secondItem="CJP-A6-lg9" secondAttribute="width" id="g5K-U1-QZi"/>
+                                                            <constraint firstItem="DxD-m2-zco" firstAttribute="centerY" secondItem="CJP-A6-lg9" secondAttribute="centerY" id="j8i-lI-TRS"/>
+                                                            <constraint firstItem="urV-qp-Bag" firstAttribute="centerY" secondItem="DxD-m2-zco" secondAttribute="centerY" multiplier="1.55" id="sTW-6n-Kck"/>
+                                                            <constraint firstItem="DxD-m2-zco" firstAttribute="centerX" secondItem="CJP-A6-lg9" secondAttribute="centerX" id="yIW-OY-6hg"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="coffeeImageView" destination="DxD-m2-zco" id="t43-Be-5ct"/>
+                                                            <outlet property="customizeButton" destination="urV-qp-Bag" id="6bB-JR-3Dc"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="x0g-gj-31r"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jRt-Oe-SeR"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FmF-g9-4Em" secondAttribute="trailing" id="0w4-qP-5NK"/>
+                                            <constraint firstAttribute="bottom" secondItem="FmF-g9-4Em" secondAttribute="bottom" id="Avj-42-SBP"/>
+                                            <constraint firstItem="FmF-g9-4Em" firstAttribute="leading" secondItem="Tsv-VY-bOG" secondAttribute="leading" id="aWH-cc-Jya"/>
+                                            <constraint firstItem="FmF-g9-4Em" firstAttribute="top" secondItem="Tsv-VY-bOG" secondAttribute="top" id="whA-Af-mNb"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6k-hZ-c0c">
                                         <rect key="frame" x="0.0" y="467" width="375" height="100"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqX-g0-ZaX">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-El-oAt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="18"/>
+                                                <state key="normal" title="I'LL TAKE IT!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didFinishSelectingCoffee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c4S-Gi-yCD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4L9-El-oAt" secondAttribute="trailing" id="1kI-Av-pio"/>
+                                            <constraint firstItem="4L9-El-oAt" firstAttribute="top" secondItem="z6k-hZ-c0c" secondAttribute="top" id="AK7-TI-u7v"/>
+                                            <constraint firstAttribute="bottom" secondItem="JqX-g0-ZaX" secondAttribute="bottom" constant="3" id="Fri-CQ-ym6"/>
+                                            <constraint firstItem="JqX-g0-ZaX" firstAttribute="top" secondItem="z6k-hZ-c0c" secondAttribute="top" id="cbK-on-hPj"/>
+                                            <constraint firstItem="JqX-g0-ZaX" firstAttribute="leading" secondItem="z6k-hZ-c0c" secondAttribute="leading" id="dZX-5b-jDO"/>
+                                            <constraint firstAttribute="bottom" secondItem="4L9-El-oAt" secondAttribute="bottom" constant="5" id="jzh-UT-FaW"/>
+                                            <constraint firstAttribute="trailing" secondItem="JqX-g0-ZaX" secondAttribute="trailing" id="nl8-sf-MfY"/>
+                                            <constraint firstItem="4L9-El-oAt" firstAttribute="leading" secondItem="z6k-hZ-c0c" secondAttribute="leading" id="y5A-lH-74e"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-sP-p44">
                                         <rect key="frame" x="0.0" y="567" width="375" height="100"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejx-89-1NN">
+                                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="TsR-RH-hNG"/>
+                                                </constraints>
+                                                <items>
+                                                    <tabBarItem systemItem="favorites" id="SB3-F3-E4v"/>
+                                                    <tabBarItem systemItem="more" id="mfF-nM-Mth"/>
+                                                    <tabBarItem systemItem="more" id="j9v-t1-le9"/>
+                                                    <tabBarItem systemItem="more" id="Lcm-7g-P7A"/>
+                                                </items>
+                                            </tabBar>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Ejx-89-1NN" secondAttribute="trailing" id="JPZ-zk-3DY"/>
+                                            <constraint firstItem="Ejx-89-1NN" firstAttribute="top" secondItem="TdU-sP-p44" secondAttribute="top" constant="10" id="YfA-0q-Dsx"/>
+                                            <constraint firstItem="Ejx-89-1NN" firstAttribute="leading" secondItem="TdU-sP-p44" secondAttribute="leading" id="e4W-ga-Wzp"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.74509803919999995" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="z6k-hZ-c0c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="IcE-1k-JAK"/>
                             <constraint firstItem="tpT-IA-xXY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LUd-w4-46s"/>
@@ -57,10 +194,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="coffeeDetails" destination="mBP-Iz-9De" id="axc-Bp-kLl"/>
+                        <outlet property="coffeeTitle" destination="cMs-lW-yps" id="Eco-oz-3pN"/>
+                        <outlet property="selectCoffeeCollectionView" destination="FmF-g9-4Em" id="KhR-6E-8uT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jacobs-wonderbar_46033470694_o.png" width="650" height="719"/>
+    </resources>
 </document>

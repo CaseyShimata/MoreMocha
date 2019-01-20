@@ -11,6 +11,12 @@
 		E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3750F5E21F418D0001690BE /* GoogleService-Info.plist */; };
 		E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3750F6221F4195E001690BE /* ColorConverter.swift */; };
 		E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3750F6521F41A94001690BE /* bagOfCoffee.jpg */; };
+		E3909CAC21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png in Resources */ = {isa = PBXBuildFile; fileRef = E3909CAB21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png */; };
+		E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */; };
+		E3909CB021F446EC00AAF52D /* SelectCoffeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */; };
+		E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */; };
+		E3909CB421F482F800AAF52D /* SelectCoffeeCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */; };
+		E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */; };
 		E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */; };
 		E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */; };
 		E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0221F3DFB300CA12E6 /* Main.storyboard */; };
@@ -25,6 +31,12 @@
 		E3750F5E21F418D0001690BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3750F6221F4195E001690BE /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
 		E3750F6521F41A94001690BE /* bagOfCoffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bagOfCoffee.jpg; sourceTree = "<group>"; };
+		E3909CAB21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jacobs-wonderbar_46033470694_o.png"; sourceTree = "<group>"; };
+		E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewModel.swift; sourceTree = "<group>"; };
+		E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeService.swift; sourceTree = "<group>"; };
+		E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeModel.swift; sourceTree = "<group>"; };
+		E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionManager.swift; sourceTree = "<group>"; };
+		E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3D84AFB21F3DFB300CA12E6 /* MoreMocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreMocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */,
+				E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */,
+				E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */,
+				E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */,
+				E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */,
+				E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */,
 			);
 			path = SelectCoffeeModule;
 			sourceTree = "<group>";
@@ -87,6 +104,7 @@
 		E3750F6421F41A75001690BE /* LocalImages */ = {
 			isa = PBXGroup;
 			children = (
+				E3909CAB21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png */,
 				E3750F6521F41A94001690BE /* bagOfCoffee.jpg */,
 			);
 			path = LocalImages;
@@ -193,6 +211,7 @@
 				E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */,
 				E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */,
 				E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */,
+				E3909CAC21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png in Resources */,
 				E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */,
 				E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */,
 			);
@@ -226,12 +245,40 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,9 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */,
+				E3909CB421F482F800AAF52D /* SelectCoffeeCollectionManager.swift in Sources */,
 				E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */,
+				E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */,
 				E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */,
 				E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */,
+				E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */,
+				E3909CB021F446EC00AAF52D /* SelectCoffeeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
