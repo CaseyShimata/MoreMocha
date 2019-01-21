@@ -15,12 +15,9 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     
     //Mark: - properties
     private let disposeBag = DisposeBag()
-    
     private var selectCoffeeViewModel: SelectCoffeeViewModel?
-    
     fileprivate var selectCoffeeModel: [SelectCoffeeModel]?
 
-    
     //Mark: - IBOutlets
     @IBOutlet weak var coffeeTitle: UILabel!
     @IBOutlet weak var coffeeDetails: UILabel!
@@ -30,43 +27,58 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     //Mark: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectCoffeeViewModel = SelectCoffeeViewModel()
         requestCoffeedata()
     }
     
+    
     private func requestCoffeedata() {
-        selectCoffeeViewModel = SelectCoffeeViewModel()
-        
-        selectCoffeeViewModel?.requestCoffee().subscribe(onNext: { (selectCoffeeModel) in
+        selectCoffeeViewModel?.requestCoffee().subscribe(onNext:{ (selectCoffeeModel) in
+            
             self.selectCoffeeModel = selectCoffeeModel
-            self.selectCoffeeCollectionView.reloadData()
             self.selectCoffeeCollectionConfigration()
+                
         }).disposed(by: disposeBag)
     }
     
-    private func selectCoffeeCollectionConfigration() -> Void {
+    private func selectCoffeeCollectionConfigration() {
+        selectCoffeeCollectionView.reloadData()
+
         selectCoffeeCollectionView.isScrollEnabled = false
+        
         if selectCoffeeModel?.isEmpty ?? true {
             selectCoffeeCollectionView.isUserInteractionEnabled = false
         }
         else {
             selectCoffeeCollectionView.isUserInteractionEnabled = true
-            let leftSwipeGest = UISwipeGestureRecognizer(target: self, action: #selector(swipeToViewNextPrevImage))
-            leftSwipeGest.direction = .left
-            let rightSwipeGest = UISwipeGestureRecognizer(target: self, action: #selector(swipeToViewNextPrevImage))
-            rightSwipeGest.direction = .right
             
-            leftSwipeGest.delegate = self
-            rightSwipeGest.delegate = self
-            selectCoffeeCollectionView.addGestureRecognizer(leftSwipeGest)
-            selectCoffeeCollectionView.addGestureRecognizer(rightSwipeGest)
+            coffeeTitle.text = selectCoffeeModel![0].title
+            coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
+            view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
+
+            setUpSwipeGestures()
         }
+    }
+    
+    
+    private func setUpSwipeGestures() {
+        let leftSwipeGest = UISwipeGestureRecognizer(target: self, action: #selector(swipeToViewNextPrevImage))
+        leftSwipeGest.direction = .left
+       
+        let rightSwipeGest = UISwipeGestureRecognizer(target: self, action: #selector(swipeToViewNextPrevImage))
+        rightSwipeGest.direction = .right
+        
+        leftSwipeGest.delegate = self
+        rightSwipeGest.delegate = self
+        
+        selectCoffeeCollectionView.addGestureRecognizer(leftSwipeGest)
+        selectCoffeeCollectionView.addGestureRecognizer(rightSwipeGest)
     }
     
     //Mark: - functions
     @objc private func swipeToViewNextPrevImage(sender: UISwipeGestureRecognizer) {
         
-        //        view.backgroundColor = hexStringToUIColor(hex: "#51E58F")
-
+        // calculate center visible item against screen
         guard let visiblesCenterItemIndex : IndexPath? = {
             for item in selectCoffeeCollectionView.visibleCells {
                 
@@ -80,30 +92,36 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         return nil
         }() else { return }
         
+        // set center item in the visibles array to current
         let visibleItems = selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
         let visiblesIdxOfCenterItem = visibleItems.index(of: visiblesCenterItemIndex!)
-        
         let currentItem = visibleItems.object(at: visiblesIdxOfCenterItem) as! IndexPath
-
-
-        ///handle background color change / title change
-        ///handle collection item/image change
-        ///handle disappear
-        ///handle the grow
-        ///gesture left iterate selectCoffeeModelArr index - 1
+        
         
         if sender.direction == .left {
             let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
             if nextItem.row < selectCoffeeModel?.count ?? 0 {
+                ///handle disappear
                 self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
+                ///handle the grow
+                changeLayout(newCurrentCell: selectCoffeeCollectionView.cellForItem(at: nextItem) as! SelectCoffeeCollectionViewCell)
             }
         }
         else if sender.direction == .right {
             let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
             if nextItem.row >= 0 {
                 self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
+                changeLayout(newCurrentCell: selectCoffeeCollectionView.cellForItem(at: nextItem) as! SelectCoffeeCollectionViewCell)
+
             }
         }
+    }
+    
+    private func changeLayout(newCurrentCell: SelectCoffeeCollectionViewCell) {
+        coffeeTitle.text = newCurrentCell.title
+        coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
+        
+        view.backgroundColor = newCurrentCell.bgColor
     }
 
 

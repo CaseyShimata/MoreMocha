@@ -8,7 +8,7 @@
 
 import UIKit
 
-func hexStringToUIColor (hex:String) -> UIColor {
+func hexToUIColor (_ hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
     
     if (cString.hasPrefix("#")) {

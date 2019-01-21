@@ -11,6 +11,11 @@ import Kingfisher
 
 class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     
+    //Mark: - properties
+    var name: String?
+    var title: String?
+    var bgColor: UIColor?
+    var details: String?
     
     //Mark: - IBOutlet
     @IBOutlet weak var coffeeImageView: UIImageView!
@@ -20,6 +25,10 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     public func bindData(selectCoffeeModel: SelectCoffeeModel?) -> Void {
         guard let imageUrlString = selectCoffeeModel?.imageUrl else {return}
         coffeeImageView.kf.setImage(with: URL(string: imageUrlString))
+        name = selectCoffeeModel?.name
+        title = selectCoffeeModel?.title
+        bgColor = hexToUIColor(selectCoffeeModel?.backgroundColor ?? "#ffffff")
+
     }
     
     //Mark: - IBAction
