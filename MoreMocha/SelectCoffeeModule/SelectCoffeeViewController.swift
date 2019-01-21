@@ -62,33 +62,29 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         }
     }
     
-    func scrollToNearestVisibleCollectionViewCell() {
-        let visibleCenterPositionOfScrollView = Float(selectCoffeeCollectionView.contentOffset.x + (self.selectCoffeeCollectionView!.bounds.size.width / 2))
-        var closestCellIndex = -1
-        var closestDistance: Float = .greatestFiniteMagnitude
-        for i in 0..<selectCoffeeCollectionView .visibleCells.count {
-            let cell = selectCoffeeCollectionView.visibleCells[i]
-            let cellWidth = cell.bounds.size.width
-            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
-
-            // Now calculate closest cell
-            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
-            if distance < closestDistance {
-                closestDistance = distance
-                closestCellIndex = selectCoffeeCollectionView.indexPath(for: cell)!.row
-            }
-        }
-        if closestCellIndex != -1 {
-            self.selectCoffeeCollectionView!.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-        }
-    }
-
-
-    
     //Mark: - functions
     @objc private func swipeToViewNextPrevImage(sender: UISwipeGestureRecognizer) {
         
         //        view.backgroundColor = hexStringToUIColor(hex: "#51E58F")
+
+        guard let visiblesCenterItemIndex : IndexPath? = {
+            for item in selectCoffeeCollectionView.visibleCells {
+                
+                let theAttributes:UICollectionViewLayoutAttributes! = selectCoffeeCollectionView.layoutAttributesForItem(at: selectCoffeeCollectionView.indexPath(for: item)!)
+                let cellFrameInSuperview = selectCoffeeCollectionView.convert(theAttributes.frame, to: selectCoffeeCollectionView.superview).midX
+
+                if abs(cellFrameInSuperview - selectCoffeeCollectionView.center.x) < 10.0 {
+                    return selectCoffeeCollectionView.indexPath(for: item)
+                }
+            }
+        return nil
+        }() else { return }
+        
+        let visibleItems = selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
+        let visiblesIdxOfCenterItem = visibleItems.index(of: visiblesCenterItemIndex!)
+        
+        let currentItem = visibleItems.object(at: visiblesIdxOfCenterItem) as! IndexPath
+
 
         ///handle background color change / title change
         ///handle collection item/image change
@@ -97,23 +93,14 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         ///gesture left iterate selectCoffeeModelArr index - 1
         
         if sender.direction == .left {
-            let visibleItems: NSArray = self.selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
-//            let currentItem = visibleItems.object(at: 0) as! IndexPath
-            let currentItem = visibleItems.count <= 2 ? visibleItems.object(at: 0) as! IndexPath : visibleItems.object(at: 1) as! IndexPath
             let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-
             if nextItem.row < selectCoffeeModel?.count ?? 0 {
                 self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
-
             }
         }
         else if sender.direction == .right {
-            let visibleItems: NSArray = self.selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
-//            let currentItem = visibleItems.object(at: 0) as! IndexPath
-            let currentItem = visibleItems.count <= 2 ? visibleItems.object(at: 0) as! IndexPath : visibleItems.object(at: 1) as! IndexPath
             let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
-
-            if nextItem.row < (selectCoffeeModel?.count) ?? 0  && nextItem.row >= 0{
+            if nextItem.row >= 0 {
                 self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
             }
         }
@@ -151,7 +138,9 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: view.frame.width * 0.190, bottom: 0, right: view.frame.width * 0.190)
+        let cellWidth = (min(view.frame.width, view.frame.height) / 1.75)
+        let offSet = view.frame.width / 2.0 - cellWidth / 2.0
+        return UIEdgeInsets(top: 0, left: offSet, bottom: 0, right: offSet)
     }
 
     
