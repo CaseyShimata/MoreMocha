@@ -15,7 +15,6 @@
 		E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */; };
 		E3909CB021F446EC00AAF52D /* SelectCoffeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */; };
 		E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */; };
-		E3909CB421F482F800AAF52D /* SelectCoffeeCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */; };
 		E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */; };
 		E3909CB921F5B62F00AAF52D /* AttributedTextCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB821F5B62F00AAF52D /* AttributedTextCustomizer.swift */; };
 		E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */; };
@@ -36,7 +35,6 @@
 		E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewModel.swift; sourceTree = "<group>"; };
 		E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeService.swift; sourceTree = "<group>"; };
 		E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeModel.swift; sourceTree = "<group>"; };
-		E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionManager.swift; sourceTree = "<group>"; };
 		E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3909CB821F5B62F00AAF52D /* AttributedTextCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTextCustomizer.swift; sourceTree = "<group>"; };
 		E3D84AFB21F3DFB300CA12E6 /* MoreMocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreMocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +86,6 @@
 				E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */,
 				E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */,
 				E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */,
-				E3909CB321F482F800AAF52D /* SelectCoffeeCollectionManager.swift */,
 				E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */,
 			);
 			path = SelectCoffeeModule;
@@ -297,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */,
-				E3909CB421F482F800AAF52D /* SelectCoffeeCollectionManager.swift in Sources */,
 				E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */,
 				E3909CB921F5B62F00AAF52D /* AttributedTextCustomizer.swift in Sources */,
 				E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */,

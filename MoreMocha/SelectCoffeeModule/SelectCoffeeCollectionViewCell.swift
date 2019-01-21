@@ -20,6 +20,7 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     //Mark: - IBOutlet
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var customizeButton: UIButton!
+    @IBOutlet weak var cupShadowImage: UIImageView!
     
     //Mark: - functions
     public func bindData(selectCoffeeModel: SelectCoffeeModel?) -> Void {
@@ -28,7 +29,16 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
         name = selectCoffeeModel?.name
         title = selectCoffeeModel?.title
         bgColor = hexToUIColor(selectCoffeeModel?.backgroundColor ?? "#ffffff")
-
+    }
+    
+    public func addShadow(endCellWidth: CGFloat) {
+        cupShadowImage.backgroundColor = UIColor.brown
+        cupShadowImage.layer.shadowColor = UIColor.black.cgColor
+        cupShadowImage.layer.shadowOffset = CGSize(width: 20, height: 20)
+        cupShadowImage.layer.shadowOpacity = 1.0
+        cupShadowImage.clipsToBounds = false
+        cupShadowImage.layer.cornerRadius = endCellWidth / 4
+        cupShadowImage.layer.shadowRadius = endCellWidth / 4
     }
     
     //Mark: - IBAction
