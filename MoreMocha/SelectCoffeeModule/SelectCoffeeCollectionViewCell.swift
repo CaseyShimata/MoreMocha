@@ -41,6 +41,18 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
         cupShadowImage.layer.shadowRadius = endCellWidth / 4
     }
     
+    public func disappear() {
+        customizeButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+    }
+    
+    public func appear() {
+        UIView.animate(withDuration: 0.25, animations: {
+            print("appear hit")
+            self.customizeButton.transform = CGAffineTransform.identity
+        })
+
+    }
+    
     //Mark: - IBAction
     @IBAction func didSelectCustomizeButton(_ sender: Any) {
         //pop over with text field, static collection view, static tableview and submit button

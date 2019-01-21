@@ -10,12 +10,13 @@ import UIKit
 import RxSwift
 import Kingfisher
 
-
 class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //Mark: - properties
     private let disposeBag = DisposeBag()
     private var selectCoffeeViewModel: SelectCoffeeViewModel?
+    private var currentCenterCell: UICollectionViewCell?
+    
     fileprivate var selectCoffeeModel: [SelectCoffeeModel]?
 
     //Mark: - IBOutlets
@@ -55,7 +56,6 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
             coffeeTitle.text = selectCoffeeModel![0].title
             coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
             view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
-
             setUpSwipeGestures()
         }
     }
@@ -76,51 +76,80 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     //Mark: - functions
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        ///still having issues with initial collectionView item
+        ///positioning after orientation change but it isn't getting hung up,
+        ///just not centering or skipping one drink on first swipe
+
+        coordinator.animate(alongsideTransition: nil, completion: {_ in
+            
+            if self.currentCenterCell != nil {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {
+                    (self.currentCenterCell as! SelectCoffeeCollectionViewCell).appear()
+                })
+            }
+
+        })
+    }
+
+    
     @objc private func swipeToViewNextPrevImage(sender: UISwipeGestureRecognizer) {
         
-        // calculate center visible item against screen
-        guard let visiblesCenterItemIndex : IndexPath? = {
-            for item in selectCoffeeCollectionView.visibleCells {
-                
-                let theAttributes:UICollectionViewLayoutAttributes! = selectCoffeeCollectionView.layoutAttributesForItem(at: selectCoffeeCollectionView.indexPath(for: item)!)
-                let cellFrameInSuperview = selectCoffeeCollectionView.convert(theAttributes.frame, to: selectCoffeeCollectionView.superview).midX
+        // calculate center visible item against screenSize
+        guard let visiblesCenterItemIndex = calculateCenterVisibleItem() else {return}
+        
+        // convert center item in the visibles array to full collection array
+        guard let currentItem = getCurrentCellIndex(visibleIndex: visiblesCenterItemIndex) else {return}
+        if sender.direction == .left || sender.direction == .right {
+            let addSub = sender.direction == .left ? 1 : -1
+            let nextItem = IndexPath(item: currentItem.item + addSub, section: 0)
 
-                if abs(cellFrameInSuperview - selectCoffeeCollectionView.center.x) < selectCoffeeCollectionView.frame.width / 3 {
-                    return selectCoffeeCollectionView.indexPath(for: item)
-                }
-            }
-        return nil
-        }() else { return }
-        
-        // set center item in the visibles array to current
-        let visibleItems = selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
-        let visiblesIdxOfCenterItem = visibleItems.index(of: visiblesCenterItemIndex!)
-        let currentItem = visibleItems.object(at: visiblesIdxOfCenterItem) as! IndexPath
-        
-        
-        if sender.direction == .left {
-            let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-            if nextItem.row < selectCoffeeModel?.count ?? 0 {
-                ///handle disappear
-                self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
-                ///handle the grow
-                guard let nextCell = selectCoffeeCollectionView.cellForItem(at: nextItem) else {return}
-                changeLayout(newCurrentCell: nextCell as! SelectCoffeeCollectionViewCell)
-            }
-        }
-            
-            
-        else if sender.direction == .right {
-            let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
-            if nextItem.row >= 0 {
-                self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
+            if nextItem.row < selectCoffeeModel?.count ?? 0 && nextItem.row >= 0 {
+                
                 ///breaks swiping right -- nil (next item ?? but not out of bounds interesting.
                 ///solution: test nextItem for nil cases .. use more safety checks ..
                 ///added guard check
-                guard let nextCell = selectCoffeeCollectionView.cellForItem(at: nextItem) else {return}
+                guard let currentCell = selectCoffeeCollectionView.cellForItem(at: IndexPath(item: currentItem.item, section: 0)) else {return}
+
+                guard let nextCell = selectCoffeeCollectionView.cellForItem(at: IndexPath(item: nextItem.item, section: 0)) else {return}
+                
+                currentCenterCell = nextCell
+
                 changeLayout(newCurrentCell: nextCell as! SelectCoffeeCollectionViewCell)
+                
+                ///handle disappear
+                (currentCell as! SelectCoffeeCollectionViewCell).customizeButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+                
+                ///transition to next item
+                self.selectCoffeeCollectionView.scrollToItem(at: nextItem, at: .centeredHorizontally, animated: true)
+                
+                ///handle the grow
+                UIView.animate(withDuration: 0.5, animations: {
+                    (nextCell as! SelectCoffeeCollectionViewCell).customizeButton.transform = CGAffineTransform.identity
+                })
             }
         }
+    }
+    
+    private func calculateCenterVisibleItem() -> IndexPath? {
+        for item in selectCoffeeCollectionView.visibleCells {
+            
+            let theAttributes:UICollectionViewLayoutAttributes! = selectCoffeeCollectionView.layoutAttributesForItem(at: selectCoffeeCollectionView.indexPath(for: item)!)
+            let cellFrameInSuperview = selectCoffeeCollectionView.convert(theAttributes.frame, to: selectCoffeeCollectionView.superview).midX
+            if abs(cellFrameInSuperview - selectCoffeeCollectionView.center.x) < selectCoffeeCollectionView.frame.width / 3 {
+                return selectCoffeeCollectionView.indexPath(for: item)
+            }
+        }
+        return nil
+    }
+    
+    private func getCurrentCellIndex(visibleIndex: IndexPath) -> IndexPath? {
+        let visibleItems = selectCoffeeCollectionView.indexPathsForVisibleItems as NSArray
+        let visiblesIdxOfCenterItem = visibleItems.index(of: visibleIndex)
+        return visibleItems.object(at: visiblesIdxOfCenterItem) as? IndexPath
     }
     
     private func changeLayout(newCurrentCell: SelectCoffeeCollectionViewCell) {
@@ -129,17 +158,6 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         
         view.backgroundColor = newCurrentCell.bgColor
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        ///still having issues with initial collectionView item
-        ///positioning after orientation change but it isn't getting hung up,
-        ///just not centering or skipping one drink on first swipe
-        selectCoffeeCollectionView.reloadData()
-    }
-
-
-
     
     //Mark: - IBAction
     @IBAction func didFinishSelectingCoffee(_ sender: Any) {
@@ -184,13 +202,25 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         return selectCoffeeModel?.count ?? 0
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectCoffeeCell", for: indexPath) as! SelectCoffeeCollectionViewCell
+        
         cell.addShadow(endCellWidth: min(view.frame.width, view.frame.height) / 1.75)
+        
+        handleReloadButtonAnimate(indexPath: indexPath, cell: cell)
+        
         if let thisSelectCoffeeItem = selectCoffeeModel?[indexPath.row] {
             cell.bindData(selectCoffeeModel: thisSelectCoffeeItem)
         }
+        
         return cell
+    }
+    
+    
+    
+    private func handleReloadButtonAnimate(indexPath: IndexPath, cell: SelectCoffeeCollectionViewCell) {
+        indexPath.row == 0 && currentCenterCell == nil ? cell.appear() : cell.disappear()
     }
 }
 

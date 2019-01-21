@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-IA-xXY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="691"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tk-h8-H6z">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emE-uj-U0V">
-                                        <rect key="frame" x="0.0" y="67.5" width="375" height="115"/>
+                                        <rect key="frame" x="0.0" y="69" width="375" height="117.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE MOCHA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
-                                                <rect key="frame" x="28" y="61" width="319" height="54"/>
+                                                <rect key="frame" x="28" y="63.5" width="319" height="54"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="38"/>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -41,7 +41,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-xh-oa7">
-                                        <rect key="frame" x="0.0" y="182.5" width="375" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="186.5" width="375" height="69"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just One More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-Iz-9De">
                                                 <rect key="frame" x="20" y="25" width="335" height="24.5"/>
@@ -61,10 +61,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsv-VY-bOG">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="236"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="242"/>
                                         <subviews>
                                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-g9-4Em">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="0.0" id="lf9-64-SsY">
                                                     <size key="itemSize" width="150" height="150"/>
@@ -74,7 +74,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectCoffeeCell" id="CJP-A6-lg9" customClass="SelectCoffeeCollectionViewCell" customModule="MoreMocha" customModuleProvider="target">
-                                                        <rect key="frame" x="115" y="35.5" width="150" height="150"/>
+                                                        <rect key="frame" x="115" y="38.5" width="150" height="150"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -147,14 +147,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6k-hZ-c0c">
-                                        <rect key="frame" x="0.0" y="486" width="375" height="101.5"/>
+                                        <rect key="frame" x="0.0" y="497.5" width="375" height="103.5"/>
                                         <subviews>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqX-g0-ZaX">
-                                                <rect key="frame" x="0.0" y="4" width="375" height="96.5"/>
+                                                <rect key="frame" x="0.0" y="4" width="375" height="98.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-El-oAt">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="102.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="18"/>
                                                 <state key="normal" title="I'LL TAKE IT!">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,7 +176,7 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-sP-p44">
-                                        <rect key="frame" x="0.0" y="587.5" width="375" height="87.5"/>
+                                        <rect key="frame" x="0.0" y="601" width="375" height="90"/>
                                         <subviews>
                                             <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejx-89-1NN">
                                                 <rect key="frame" x="0.0" y="8" width="375" height="50"/>
@@ -213,6 +213,7 @@
                             <constraint firstItem="TdU-sP-p44" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.13" id="TLF-dW-tvQ"/>
                             <constraint firstItem="tpT-IA-xXY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="To5-Ib-uGX"/>
                             <constraint firstItem="uI3-xh-oa7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="cf0-N8-SEW"/>
+                            <constraint firstItem="tpT-IA-xXY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="coF-z4-mIj"/>
                             <constraint firstItem="tpT-IA-xXY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nOO-HQ-XjB"/>
                             <constraint firstItem="emE-uj-U0V" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.17" id="wh8-oo-ev8"/>
                             <constraint firstItem="Tsv-VY-bOG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" id="yye-95-n5q"/>
