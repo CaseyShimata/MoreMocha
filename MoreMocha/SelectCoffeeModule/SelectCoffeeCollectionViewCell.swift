@@ -16,31 +16,74 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     var title: String?
     var bgColor: UIColor?
     var details: String?
+    var parentWidth: CGFloat?
     
     //Mark: - IBOutlet
     @IBOutlet weak var coffeeImageView: UIImageView!
-    @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var cupShadowImage: UIImageView!
+    @IBOutlet weak var customizeButton: UIButton!
     
-    //Mark: - functions
+    @IBOutlet weak var cupShadowImageWidth: NSLayoutConstraint!
+    @IBOutlet weak var cupShadowImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var customizeWidth: NSLayoutConstraint!
+    @IBOutlet weak var customizeHeight: NSLayoutConstraint!
+    @IBOutlet weak var cupHeight: NSLayoutConstraint!
+    @IBOutlet weak var cupWidth: NSLayoutConstraint!
+    
+    //Mark: - dataFunctions
     public func bindData(selectCoffeeModel: SelectCoffeeModel?) -> Void {
-        guard let imageUrlString = selectCoffeeModel?.imageUrl else {return}
-        coffeeImageView.kf.setImage(with: URL(string: imageUrlString))
         name = selectCoffeeModel?.name
         title = selectCoffeeModel?.title
         bgColor = hexToUIColor(selectCoffeeModel?.backgroundColor ?? "#ffffff")
+        guard let imageUrlString = selectCoffeeModel?.imageUrl else {
+            cupShadowImage.alpha = 0.0
+            coffeeImageView.image = UIImage(named: "No_image_available.jpg")
+            return
+        }
+        coffeeImageView.kf.setImage(with: URL(string: imageUrlString))
     }
     
-    public func addShadow(endCellWidth: CGFloat) {
+    //Mark: = UIfunctions
+    public func bindParentUIInfo(cellWidth: CGFloat) {
+        parentWidth = cellWidth
+        adjustCoffeeImage()
+        adjustcupShadowImage()
+        adjustCustomizeButton()
+    }
+    
+    public func adjustCoffeeImage() {
+        coffeeImageView.clipsToBounds = false
+        cupWidth.constant = parentWidth!
+        cupHeight.constant = parentWidth!
+    }
+
+    public func adjustcupShadowImage() {
+        let heightAndWidth = parentWidth! * 0.48
         cupShadowImage.backgroundColor = UIColor.brown
-        cupShadowImage.layer.shadowColor = UIColor.black.cgColor
-        cupShadowImage.layer.shadowOffset = CGSize(width: 20, height: 20)
-        cupShadowImage.layer.shadowOpacity = 1.0
         cupShadowImage.clipsToBounds = false
-        cupShadowImage.layer.cornerRadius = endCellWidth / 4
-        cupShadowImage.layer.shadowRadius = endCellWidth / 4
+        cupShadowImage.layer.cornerRadius = heightAndWidth / 2
+        cupShadowImageWidth.constant = heightAndWidth
+        cupShadowImageHeight.constant = heightAndWidth
+
+        let shadowPath = UIBezierPath(rect: CGRect(x: parentWidth! * 0.05, y: parentWidth! * 0.166, width: parentWidth! * 0.75, height: parentWidth! * 0.75))
+        cupShadowImage.layer.masksToBounds =  false
+        cupShadowImage.layer.shadowColor = UIColor.purple.cgColor
+        cupShadowImage.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+        cupShadowImage.layer.shadowOpacity =  0.4
+        cupShadowImage.layer.shadowRadius = 55.0
+        cupShadowImage.layer.shadowPath = shadowPath.cgPath
     }
     
+    public func adjustCustomizeButton() {
+        customizeButton.clipsToBounds = false
+        customizeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        customizeWidth.constant = parentWidth! * 0.17
+        customizeHeight.constant = parentWidth! * 0.17
+        customizeButton.layer.cornerRadius = parentWidth! * 0.17 / 2
+    }
+
+    
+    //Mark: = animationFunctions
     public func disappear() {
         customizeButton.transform = CGAffineTransform(scaleX: 0, y: 0)
     }
@@ -50,7 +93,6 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
             print("appear hit")
             self.customizeButton.transform = CGAffineTransform.identity
         })
-
     }
     
     //Mark: - IBAction

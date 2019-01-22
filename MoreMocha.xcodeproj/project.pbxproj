@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7CF05B950353769A4399D6CE /* Pods_MoreMocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3B340C32F1733C8AB0DF30 /* Pods_MoreMocha.framework */; };
+		E31E5DED21F7C81A00DC864C /* No_image_available.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E31E5DEC21F7C81A00DC864C /* No_image_available.jpg */; };
 		E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3750F5E21F418D0001690BE /* GoogleService-Info.plist */; };
 		E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3750F6221F4195E001690BE /* ColorConverter.swift */; };
 		E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3750F6521F41A94001690BE /* bagOfCoffee.jpg */; };
@@ -28,6 +29,7 @@
 		082629F4633EA1A2464EFF79 /* Pods-MoreMocha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreMocha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha.debug.xcconfig"; sourceTree = "<group>"; };
 		8BA3523AF63B36FEE401CC77 /* Pods-MoreMocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreMocha.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreMocha/Pods-MoreMocha.release.xcconfig"; sourceTree = "<group>"; };
 		DD3B340C32F1733C8AB0DF30 /* Pods_MoreMocha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreMocha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31E5DEC21F7C81A00DC864C /* No_image_available.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = No_image_available.jpg; sourceTree = "<group>"; };
 		E3750F5E21F418D0001690BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3750F6221F4195E001690BE /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
 		E3750F6521F41A94001690BE /* bagOfCoffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bagOfCoffee.jpg; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		E3750F6421F41A75001690BE /* LocalImages */ = {
 			isa = PBXGroup;
 			children = (
+				E31E5DEC21F7C81A00DC864C /* No_image_available.jpg */,
 				E3909CAB21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png */,
 				E3750F6521F41A94001690BE /* bagOfCoffee.jpg */,
 			);
@@ -218,6 +221,7 @@
 			files = (
 				E3D84B0921F3DFB400CA12E6 /* LaunchScreen.storyboard in Resources */,
 				E3750F5F21F418D0001690BE /* GoogleService-Info.plist in Resources */,
+				E31E5DED21F7C81A00DC864C /* No_image_available.jpg in Resources */,
 				E3D84B0621F3DFB400CA12E6 /* Assets.xcassets in Resources */,
 				E3909CAC21F42E0300AAF52D /* jacobs-wonderbar_46033470694_o.png in Resources */,
 				E3750F6621F41A94001690BE /* bagOfCoffee.jpg in Resources */,

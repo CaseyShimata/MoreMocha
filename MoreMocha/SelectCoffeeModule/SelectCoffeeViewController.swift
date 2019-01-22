@@ -24,6 +24,7 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var coffeeDetails: UILabel!
     @IBOutlet weak var selectCoffeeCollectionView: UICollectionView!
     @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var collectionParentHeight: NSLayoutConstraint!
     
     //Mark: - lifecycle
     override func viewDidLoad() {
@@ -55,7 +56,7 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
             
             coffeeTitle.text = selectCoffeeModel![0].title
             coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
-            view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
+//            view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
             setUpSwipeGestures()
         }
     }
@@ -156,7 +157,7 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         coffeeTitle.text = newCurrentCell.title
         coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
         
-        view.backgroundColor = newCurrentCell.bgColor
+//        view.backgroundColor = newCurrentCell.bgColor
     }
     
     //Mark: - IBAction
@@ -187,7 +188,11 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let minWidth = min(view.frame.width, view.frame.height) / 1.75
+        
+        collectionParentHeight.constant = minWidth
+        
         return CGSize(width: minWidth, height: minWidth)
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -206,7 +211,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectCoffeeCell", for: indexPath) as! SelectCoffeeCollectionViewCell
         
-        cell.addShadow(endCellWidth: min(view.frame.width, view.frame.height) / 1.75)
+        cell.bindParentUIInfo(cellWidth: min(view.frame.width, view.frame.height) / 1.75)
         
         handleReloadButtonAnimate(indexPath: indexPath, cell: cell)
         
