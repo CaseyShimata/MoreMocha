@@ -13,7 +13,7 @@
         <!--Select Coffee View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SelectCoffeeViewController" customModule="MoreMocha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="menu" storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="SelectCoffeeViewController" customModule="MoreMocha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,14 +195,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <items>
-                                                    <tabBarItem systemItem="favorites" id="SB3-F3-E4v"/>
-                                                    <tabBarItem systemItem="more" id="mfF-nM-Mth" userLabel="Menu"/>
-                                                    <tabBarItem systemItem="more" id="j9v-t1-le9" userLabel="Profile"/>
-                                                    <tabBarItem systemItem="more" id="Lcm-7g-P7A"/>
+                                                    <tabBarItem title="Favorites" image="success.png" id="6r9-vW-zov"/>
+                                                    <tabBarItem title="Profile" image="profile" id="MXW-3k-8o3" userLabel="Profile"/>
+                                                    <tabBarItem title="Menu" image="menu" id="aQT-hH-KTP" userLabel="Menu"/>
+                                                    <tabBarItem title="More" image="IQButtonBarArrowUp.png" id="Wln-oC-urL"/>
                                                 </items>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UJ0-f9-OOE"/>
+                                                </connections>
                                             </tabBar>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -243,68 +246,201 @@
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Customize View Controller-->
+        <scene sceneID="m2b-Qw-FjG">
+            <objects>
+                <viewController restorationIdentifier="customize" storyboardIdentifier="customize" id="Dkz-IO-YxB" customClass="CustomizeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfa-u1-p30">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.4571650256849315" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YuF-ZN-87K"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYP-qS-RJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="-99"/>
+        </scene>
+        <!--favorites-->
         <scene sceneID="LFt-za-dgv">
             <objects>
-                <viewController id="Ecb-sO-XjS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ecb-sO-XjS" userLabel="favorites" customClass="FavoritesViewController" customModule="MoreMocha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQ8-LR-s6l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Qd2-0X-5nZ">
+                                <rect key="frame" x="0.0" y="647.66666666666663" width="414" height="88.333333333333371"/>
+                                <subviews>
+                                    <tabBar clipsSubviews="YES" contentMode="top" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-O6-nJ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <tabBarItem title="Favorites" image="success.png" id="Q2K-4Z-mY7"/>
+                                            <tabBarItem title="Profile" image="profile" id="ibc-L9-2Bt" userLabel="Profile"/>
+                                            <tabBarItem title="Menu" image="menu" id="1mc-Sw-Zrv" userLabel="Menu"/>
+                                            <tabBarItem title="More" image="IQButtonBarArrowUp.png" id="4ir-Fz-rXq"/>
+                                        </items>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ecb-sO-XjS" id="Don-q0-4yn"/>
+                                        </connections>
+                                    </tabBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5DF-O6-nJ1" secondAttribute="trailing" id="BuH-KG-2YY"/>
+                                    <constraint firstItem="5DF-O6-nJ1" firstAttribute="top" secondItem="Qd2-0X-5nZ" secondAttribute="top" id="fhL-Mb-O9m"/>
+                                    <constraint firstItem="5DF-O6-nJ1" firstAttribute="leading" secondItem="Qd2-0X-5nZ" secondAttribute="leading" id="jIe-MR-tBi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85633969306945801" green="0.22165840864181519" blue="0.060301080346107483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Qd2-0X-5nZ" secondAttribute="bottom" id="Ar3-J7-LUz"/>
+                            <constraint firstAttribute="trailing" secondItem="Qd2-0X-5nZ" secondAttribute="trailing" id="Lfw-TW-uXO"/>
+                            <constraint firstItem="Qd2-0X-5nZ" firstAttribute="height" secondItem="WQ8-LR-s6l" secondAttribute="height" multiplier="0.12" id="S8W-9i-nqG"/>
+                            <constraint firstItem="Qd2-0X-5nZ" firstAttribute="leading" secondItem="WQ8-LR-s6l" secondAttribute="leading" id="WG2-tW-PrZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UrW-dR-3ky"/>
                     </view>
+                    <connections>
+                        <outlet property="tabBar" destination="5DF-O6-nJ1" id="A3j-lf-tog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilV-kA-QTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-723" y="756"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="uja-4j-M8q">
             <objects>
-                <viewController id="og5-hl-8Nb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="og5-hl-8Nb" customClass="ProfileViewController" customModule="MoreMocha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQn-yY-b0v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="qib-ef-HHu">
+                                <rect key="frame" x="0.0" y="647.66666666666663" width="414" height="88.333333333333371"/>
+                                <subviews>
+                                    <tabBar clipsSubviews="YES" contentMode="top" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-XI-6mT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <tabBarItem title="Favorites" image="success.png" id="lxP-3Y-nxp"/>
+                                            <tabBarItem title="Profile" image="profile" id="eqw-H1-zkR" userLabel="Profile"/>
+                                            <tabBarItem title="Menu" image="menu" id="cD1-Mq-F3i" userLabel="Menu"/>
+                                            <tabBarItem title="More" image="IQButtonBarArrowUp.png" id="4UI-9a-f4d"/>
+                                        </items>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="og5-hl-8Nb" id="KL7-VV-P2O"/>
+                                        </connections>
+                                    </tabBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gnQ-XI-6mT" firstAttribute="top" secondItem="qib-ef-HHu" secondAttribute="top" id="mwx-u1-ZKK"/>
+                                    <constraint firstItem="gnQ-XI-6mT" firstAttribute="leading" secondItem="qib-ef-HHu" secondAttribute="leading" id="pO2-jD-Dxc"/>
+                                    <constraint firstAttribute="trailing" secondItem="gnQ-XI-6mT" secondAttribute="trailing" id="zUY-AC-gaz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.054901960780000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qib-ef-HHu" secondAttribute="bottom" id="3LS-fJ-ssQ"/>
+                            <constraint firstItem="qib-ef-HHu" firstAttribute="height" secondItem="zQn-yY-b0v" secondAttribute="height" multiplier="0.12" id="N2b-Jm-KUE"/>
+                            <constraint firstItem="qib-ef-HHu" firstAttribute="leading" secondItem="zQn-yY-b0v" secondAttribute="leading" id="Od9-bw-ngW"/>
+                            <constraint firstAttribute="trailing" secondItem="qib-ef-HHu" secondAttribute="trailing" id="xZG-Iy-IhL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kt5-JQ-77B"/>
                     </view>
+                    <connections>
+                        <outlet property="tabBar" destination="gnQ-XI-6mT" id="9Kc-ML-wzB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yy-Un-Gfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="756"/>
+            <point key="canvasLocation" x="29" y="756"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="HOn-F0-P9z">
-            <objects>
-                <viewController id="bpn-Gg-uFe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="moJ-rG-s1d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Bt1-2S-R48"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mSF-Yn-t4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="303" y="756"/>
-        </scene>
-        <!--View Controller-->
+        <!--More View Controller-->
         <scene sceneID="cE7-4w-IWI">
             <objects>
-                <viewController id="qUF-yu-g4C" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="more" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qUF-yu-g4C" customClass="MoreViewController" customModule="MoreMocha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c7e-U8-Nva">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="W9q-Bd-mvi">
+                                <rect key="frame" x="0.0" y="647.66666666666663" width="414" height="88.333333333333371"/>
+                                <subviews>
+                                    <tabBar clipsSubviews="YES" contentMode="top" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-n6-Nrv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <tabBarItem title="Favorites" image="success.png" id="2Bb-RW-QPI"/>
+                                            <tabBarItem title="Profile" image="profile" id="1T8-p9-XiM" userLabel="Profile"/>
+                                            <tabBarItem title="Menu" image="menu" id="sPi-9G-1oz" userLabel="Menu"/>
+                                            <tabBarItem title="More" image="IQButtonBarArrowUp.png" id="oBq-x0-LQt"/>
+                                        </items>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qUF-yu-g4C" id="paE-qW-w9J"/>
+                                        </connections>
+                                    </tabBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BWT-n6-Nrv" firstAttribute="leading" secondItem="W9q-Bd-mvi" secondAttribute="leading" id="IeO-js-sTB"/>
+                                    <constraint firstItem="BWT-n6-Nrv" firstAttribute="top" secondItem="W9q-Bd-mvi" secondAttribute="top" id="VOb-Dr-C0U"/>
+                                    <constraint firstAttribute="trailing" secondItem="BWT-n6-Nrv" secondAttribute="trailing" id="Vof-h6-Zwi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="W9q-Bd-mvi" secondAttribute="bottom" id="EXN-nA-5uM"/>
+                            <constraint firstItem="W9q-Bd-mvi" firstAttribute="leading" secondItem="c7e-U8-Nva" secondAttribute="leading" id="h6H-88-hoI"/>
+                            <constraint firstItem="W9q-Bd-mvi" firstAttribute="height" secondItem="c7e-U8-Nva" secondAttribute="height" multiplier="0.12" id="sn4-hp-Fvl"/>
+                            <constraint firstAttribute="trailing" secondItem="W9q-Bd-mvi" secondAttribute="trailing" id="wkp-Ht-1Fa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Fx-5h-K6A"/>
                     </view>
+                    <connections>
+                        <outlet property="tabBar" destination="BWT-n6-Nrv" id="gUV-NJ-lG1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqj-1H-RGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="756"/>
+            <point key="canvasLocation" x="786" y="756"/>
+        </scene>
+        <!--Drink Selected View Contoller-->
+        <scene sceneID="XpP-b0-Ie9">
+            <objects>
+                <viewController storyboardIdentifier="drinkselected" useStoryboardIdentifierAsRestorationIdentifier="YES" id="60P-8A-OAv" customClass="DrinkSelectedViewContoller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wdy-vx-lkB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="J7I-O1-5aF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBD-7x-qvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="-99"/>
         </scene>
     </scenes>
     <resources>
+        <image name="IQButtonBarArrowUp.png" width="21" height="12"/>
         <image name="jacobs-wonderbar_46033470694_o.png" width="650" height="719"/>
+        <image name="menu" width="40" height="40"/>
+        <image name="profile" width="9" height="11"/>
+        <image name="success.png" width="28" height="28"/>
     </resources>
 </document>

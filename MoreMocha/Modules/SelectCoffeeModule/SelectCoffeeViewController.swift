@@ -50,6 +50,8 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
 
 
     private func requestCoffeedata() {
+            tabBar.selectedItem = self.tabBar.items![1]
+
         selectCoffeeViewModel?.requestCoffee().subscribe(onNext: { (selectCoffeeModel) in
             self.selectCoffeeModel = selectCoffeeModel
             self.setUpSwipeGestures()
@@ -319,3 +321,22 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
     }
 }
 
+
+
+
+
+//Mark: - CollectionView Handling
+
+extension SelectCoffeeViewController: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+
+        guard let viewTitle = item.title else {return}
+        
+        let nextView = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: viewTitle.lowercased())
+        
+        present(nextView, animated: true)
+        
+    }
+    
+}
