@@ -22,16 +22,23 @@
                                 <rect key="frame" x="0.0" y="30" width="414" height="706"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yp-vR-wfb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="197.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE MOCHA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
+                                                <rect key="frame" x="0.0" y="141" width="414" height="56.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                                <color key="textColor" red="0.32194972038269043" green="0.1653943657875061" blue="0.039938971400260925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="cMs-lW-yps" firstAttribute="leading" secondItem="9Yp-vR-wfb" secondAttribute="leading" id="M1K-N6-kVz"/>
+                                            <constraint firstAttribute="bottom" secondItem="cMs-lW-yps" secondAttribute="bottom" id="e1Y-ci-m63"/>
+                                            <constraint firstAttribute="trailing" secondItem="cMs-lW-yps" secondAttribute="trailing" id="ghz-9M-RPd"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE MOCHA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
-                                        <rect key="frame" x="0.0" y="141" width="414" height="56.666666666666657"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
-                                        <color key="textColor" red="0.32194972038269043" green="0.1653943657875061" blue="0.039938971400260925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jj-cn-qSR">
                                         <rect key="frame" x="0.0" y="197.66666666666666" width="414" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,7 +86,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5A-AY-y2x" userLabel="cupShadowImage">
-                                                                    <rect key="frame" x="45" y="123.33333333333331" width="60" height="60"/>
+                                                                    <rect key="frame" x="45" y="110" width="60" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="JSf-aM-g8p"/>
                                                                         <constraint firstAttribute="height" constant="60" id="X2c-tc-K1U"/>
@@ -115,7 +122,7 @@
                                                             <constraint firstItem="DxD-m2-zco" firstAttribute="leading" secondItem="CJP-A6-lg9" secondAttribute="leadingMargin" id="3Ho-R3-DaL"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="DxD-m2-zco" secondAttribute="trailing" id="D7z-Cy-8Vf"/>
                                                             <constraint firstItem="DxD-m2-zco" firstAttribute="top" secondItem="CJP-A6-lg9" secondAttribute="topMargin" id="EPd-d3-bM8"/>
-                                                            <constraint firstItem="G5A-AY-y2x" firstAttribute="bottom" secondItem="DxD-m2-zco" secondAttribute="bottom" multiplier="0.97" id="Fig-EM-UIJ"/>
+                                                            <constraint firstItem="G5A-AY-y2x" firstAttribute="bottom" secondItem="DxD-m2-zco" secondAttribute="bottom" multiplier="0.9" id="Fig-EM-UIJ"/>
                                                             <constraint firstItem="urV-qp-Bag" firstAttribute="centerX" secondItem="DxD-m2-zco" secondAttribute="centerX" multiplier="1.32" id="TJ0-Nt-iZz"/>
                                                             <constraint firstItem="G5A-AY-y2x" firstAttribute="centerX" secondItem="DxD-m2-zco" secondAttribute="centerX" id="eVa-Uj-e18"/>
                                                             <constraint firstItem="urV-qp-Bag" firstAttribute="centerY" secondItem="DxD-m2-zco" secondAttribute="centerY" multiplier="1.55" id="sTW-6n-Kck"/>
@@ -227,6 +234,7 @@
                         <outlet property="coffeeDetails" destination="mBP-Iz-9De" id="axc-Bp-kLl"/>
                         <outlet property="coffeeTitle" destination="cMs-lW-yps" id="Eco-oz-3pN"/>
                         <outlet property="collectionParentHeight" destination="05R-V9-Y0q" id="ALg-Ud-SrH"/>
+                        <outlet property="selectCoffeeButton" destination="4L9-El-oAt" id="wSh-Z0-RXp"/>
                         <outlet property="selectCoffeeCollectionView" destination="FmF-g9-4Em" id="KhR-6E-8uT"/>
                         <outlet property="tabBar" destination="Ejx-89-1NN" id="ISn-DP-nkp"/>
                     </connections>
@@ -234,6 +242,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LFt-za-dgv">
+            <objects>
+                <viewController id="Ecb-sO-XjS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WQ8-LR-s6l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UrW-dR-3ky"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilV-kA-QTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-723" y="756"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uja-4j-M8q">
+            <objects>
+                <viewController id="og5-hl-8Nb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zQn-yY-b0v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kt5-JQ-77B"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yy-Un-Gfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="756"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HOn-F0-P9z">
+            <objects>
+                <viewController id="bpn-Gg-uFe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="moJ-rG-s1d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bt1-2S-R48"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSF-Yn-t4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="756"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cE7-4w-IWI">
+            <objects>
+                <viewController id="qUF-yu-g4C" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c7e-U8-Nva">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2Fx-5h-K6A"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqj-1H-RGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="756"/>
         </scene>
     </scenes>
     <resources>

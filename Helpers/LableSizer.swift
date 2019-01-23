@@ -45,11 +45,18 @@ extension UILabel {
     
     /// Will auto resize the contained text to a font size which fits the frames bounds.
     /// Uses the pre-set font to dynamically determine the proper sizing
-    func fitTextToBounds() {
-        guard let text = text, let currentFont = font else { return }
+    func fitTextToBounds() -> UIFont? {
+        guard let text = text, let currentFont = font else { return font }
         
         let bestFittingFont = UIFont.bestFittingFont(for: text, in: bounds, fontDescriptor: currentFont.fontDescriptor, additionalAttributes: basicStringAttributes)
         font = bestFittingFont
+        
+        let deviceOrient = UIApplication.shared.statusBarOrientation
+        
+        if deviceOrient == .portrait {
+            return bestFittingFont
+        }
+        return UIFont(name: bestFittingFont.fontName, size: bestFittingFont.pointSize * 0.5)
     }
     
     private var basicStringAttributes: [NSAttributedString.Key: Any] {
@@ -58,6 +65,11 @@ extension UILabel {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = self.textAlignment
         paragraphStyle.lineBreakMode = self.lineBreakMode
+        paragraphStyle.lineSpacing = 0.75
+        paragraphStyle.lineHeightMultiple = 0.0
+        paragraphStyle.alignment = .center
+
+        
         attribs[.paragraphStyle] = paragraphStyle
         
         return attribs

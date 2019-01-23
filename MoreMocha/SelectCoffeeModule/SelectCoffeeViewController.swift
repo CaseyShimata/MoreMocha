@@ -18,7 +18,11 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     private var cellSpacing: CGFloat = 0.0
     private var cellWidth: CGFloat = 0.0
     private var cellOffset: CGFloat = 0.0
-
+    private var landScapeSizedTitle: CGFloat?
+    private var portraitSizedTitle: CGFloat?
+    private var landScapeSizedDetail: CGFloat?
+    private var portraitSizedDetail: CGFloat?
+    
     fileprivate var selectCoffeeModel: [SelectCoffeeModel]?
 
     
@@ -29,7 +33,7 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var selectCoffeeCollectionView: UICollectionView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var collectionParentHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var selectCoffeeButton: UIButton!
     
     
     //Mark: - lifecycle
@@ -75,9 +79,40 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
         else {
             selectCoffeeCollectionView.isUserInteractionEnabled = true
             coffeeTitle.text = selectCoffeeModel![0].title
-            coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
             view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
             setSizes()
+        }
+    }
+    
+    
+    private func resizeText() {
+        
+//        let deviceOrient = UIDevice.current.orientation
+        let deviceOrient = UIApplication.shared.statusBarOrientation
+
+        if deviceOrient == .portrait {
+            if portraitSizedTitle == nil {
+                portraitSizedTitle = coffeeTitle.fitTextToBounds()?.pointSize
+            }
+            if portraitSizedDetail == nil {
+                portraitSizedDetail = coffeeDetails.fitTextToBounds()?.pointSize
+            }
+            coffeeTitle.font = UIFont(name: coffeeTitle.font.fontName, size: portraitSizedTitle ?? 10.0)
+            coffeeDetails.font = UIFont(name: coffeeDetails.font.fontName, size: portraitSizedDetail ?? 10.0)
+            print("port")
+        }
+            
+        else if deviceOrient  == .landscapeLeft || deviceOrient == .landscapeRight {
+            print("land")
+
+            if landScapeSizedTitle == nil {
+                landScapeSizedTitle = coffeeTitle.fitTextToBounds()?.pointSize ?? 10.0
+            }
+            if landScapeSizedDetail == nil {
+                landScapeSizedDetail = coffeeDetails.fitTextToBounds()?.pointSize ?? 10.0
+            }
+            coffeeTitle.font = UIFont(name: coffeeTitle.font.fontName, size: landScapeSizedTitle!)
+            coffeeDetails.font = UIFont(name: coffeeDetails.font.fontName, size: landScapeSizedDetail!)
         }
     }
     
@@ -160,7 +195,6 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     
     private func changeLayout(newCurrentCell: SelectCoffeeCollectionViewCell) {
         coffeeTitle.text = newCurrentCell.title
-        coffeeTitle.setLineSpacing(lineHeightMultiple: 0.72)
         view.backgroundColor = newCurrentCell.bgColor
     }
     
@@ -210,8 +244,8 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         var cellSpacingMultiplier: CGFloat = screenWidth * 0.22667 + halfCupSize
         var offSet = screenWidth * 0.295 + halfCupSize
         
-        
-        if UIDevice.current.orientation == .portrait {
+        if UIApplication.shared.statusBarOrientation == .portrait {
+//        if UIDevice.current.orientation == .portrait {
             sizeMultiplier = 0.45
             cellSpacingMultiplier = screenWidth * 0.225
             offSet = screenWidth * 0.275
@@ -225,8 +259,14 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
 
         selectCoffeeCollectionView.collectionViewLayout.invalidateLayout()
         
+        resizeText()
+        scrollToIndexAndAnimate()
+
+    }
+    
+    func scrollToIndexAndAnimate() {
         if self.currentCenterIndex != nil {
-        
+            
             //scroll to needs to wait until rotation
             self.selectCoffeeCollectionView.scrollToItem(at: self.currentCenterIndex!, at: .centeredHorizontally, animated: false)
             
@@ -234,7 +274,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.20, execute: {(
                 self.selectCoffeeCollectionView.cellForItem(at: self
                     .currentCenterIndex!) as! SelectCoffeeCollectionViewCell)
-                    .customizeButton.transform = CGAffineTransform.identity
+                .customizeButton.transform = CGAffineTransform.identity
             })
         }
     }

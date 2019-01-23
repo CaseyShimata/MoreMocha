@@ -66,7 +66,7 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
 
     public func adjustcupShadowImage() {
         let heightAndWidth = parentWidth! * 0.40
-        cupShadowImage.backgroundColor = UIColor.brown
+        cupShadowImage.backgroundColor = bgColor ?? UIColor.brown
         cupShadowImage.clipsToBounds = false
         cupShadowImage.layer.cornerRadius = heightAndWidth / 2
         cupShadowImageWidth.constant = heightAndWidth
