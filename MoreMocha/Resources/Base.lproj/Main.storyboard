@@ -21,33 +21,26 @@
                             <stackView opaque="NO" contentMode="bottom" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-IA-xXY">
                                 <rect key="frame" x="0.0" y="30" width="414" height="706"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48G-mr-S9a">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="223.33333333333334"/>
-                                        <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE MOCHA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
-                                                <rect key="frame" x="10" y="156.66666666666666" width="394" height="56.666666666666657"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
-                                                <color key="textColor" red="0.32194972038269043" green="0.1653943657875061" blue="0.039938971400260925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                                            </label>
-                                        </subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yp-vR-wfb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="cMs-lW-yps" secondAttribute="bottom" constant="10" id="CQf-ic-Ndg"/>
-                                            <constraint firstAttribute="trailing" secondItem="cMs-lW-yps" secondAttribute="trailing" constant="10" id="HmH-26-Q0t"/>
-                                            <constraint firstItem="cMs-lW-yps" firstAttribute="leading" secondItem="48G-mr-S9a" secondAttribute="leading" constant="10" id="oYs-uf-ySs"/>
-                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jj-cn-qSR">
-                                        <rect key="frame" x="0.0" y="223.33333333333334" width="414" height="36.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE MOCHA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-lW-yps">
+                                        <rect key="frame" x="0.0" y="141" width="414" height="56.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                        <color key="textColor" red="0.32194972038269043" green="0.1653943657875061" blue="0.039938971400260925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jj-cn-qSR">
+                                        <rect key="frame" x="0.0" y="197.66666666666666" width="414" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-xh-oa7">
-                                        <rect key="frame" x="0.0" y="260" width="414" height="24.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="234.66666666666669" width="414" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just One More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-Iz-9De">
-                                                <rect key="frame" x="10" y="0.0" width="394" height="24.666666666666668"/>
+                                                <rect key="frame" x="10" y="0.0" width="394" height="50"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
                                                 <color key="textColor" red="0.32194972038269043" green="0.1653943657875061" blue="0.039938971400260925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +54,7 @@
                                             <constraint firstItem="mBP-Iz-9De" firstAttribute="top" secondItem="uI3-xh-oa7" secondAttribute="top" id="m2D-3E-Xnf"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRq-6Z-zUJ">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRq-6Z-zUJ">
                                         <rect key="frame" x="0.0" y="284.66666666666669" width="414" height="36.666666666666686"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -192,7 +185,7 @@
                                         <rect key="frame" x="0.0" y="617.66666666666663" width="414" height="88.333333333333371"/>
                                         <subviews>
                                             <tabBar clipsSubviews="YES" contentMode="top" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejx-89-1NN">
-                                                <rect key="frame" x="0.0" y="10" width="414" height="49"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <items>
                                                     <tabBarItem systemItem="favorites" id="SB3-F3-E4v"/>
@@ -209,7 +202,7 @@
                                         <constraints>
                                             <constraint firstItem="Ejx-89-1NN" firstAttribute="leading" secondItem="TdU-sP-p44" secondAttribute="leading" id="2mD-p1-qiz"/>
                                             <constraint firstAttribute="trailing" secondItem="Ejx-89-1NN" secondAttribute="trailing" id="XWH-yc-AGs"/>
-                                            <constraint firstItem="Ejx-89-1NN" firstAttribute="top" secondItem="TdU-sP-p44" secondAttribute="top" constant="10" id="fKV-yK-YgR"/>
+                                            <constraint firstItem="Ejx-89-1NN" firstAttribute="top" secondItem="TdU-sP-p44" secondAttribute="top" id="fKV-yK-YgR"/>
                                         </constraints>
                                     </view>
                                 </subviews>

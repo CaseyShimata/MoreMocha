@@ -18,6 +18,7 @@
 		E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */; };
 		E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */; };
 		E3909CB921F5B62F00AAF52D /* AttributedTextCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB821F5B62F00AAF52D /* AttributedTextCustomizer.swift */; };
+		E3B3080021F8A2710003E08B /* LableSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B307FF21F8A2710003E08B /* LableSizer.swift */; };
 		E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */; };
 		E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */; };
 		E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0221F3DFB300CA12E6 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeModel.swift; sourceTree = "<group>"; };
 		E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3909CB821F5B62F00AAF52D /* AttributedTextCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTextCustomizer.swift; sourceTree = "<group>"; };
+		E3B307FF21F8A2710003E08B /* LableSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableSizer.swift; sourceTree = "<group>"; };
 		E3D84AFB21F3DFB300CA12E6 /* MoreMocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreMocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				E3750F6221F4195E001690BE /* ColorConverter.swift */,
 				E3909CB821F5B62F00AAF52D /* AttributedTextCustomizer.swift */,
+				E3B307FF21F8A2710003E08B /* LableSizer.swift */,
 			);
 			name = Helpers;
 			path = ../Helpers;
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B3080021F8A2710003E08B /* LableSizer.swift in Sources */,
 				E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */,
 				E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */,
 				E3909CB921F5B62F00AAF52D /* AttributedTextCustomizer.swift in Sources */,
