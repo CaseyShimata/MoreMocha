@@ -16,6 +16,7 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     var bgColor: UIColor?
     var details: String?
     var parentWidth: CGFloat?
+    var parentView: UIViewController?
 
     //Mark: - IBOutlet
     @IBOutlet weak var coffeeImageView: UIImageView!
@@ -30,7 +31,8 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cupWidth: NSLayoutConstraint!
 
     //Mark: - dataFunctions
-    public func bindData(selectCoffeeModel: SelectCoffeeModel?) -> Void {
+    public func bindData(selectCoffeeModel: SelectCoffeeModel?, parentView: UIViewController?) -> Void {
+        self.parentView = parentView
         name = selectCoffeeModel?.name
         title = selectCoffeeModel?.title
         bgColor = hexToUIColor(selectCoffeeModel?.backgroundColor ?? "#ffffff")
@@ -112,14 +114,12 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     //Mark: - IBAction
     @IBAction func didSelectCustomizeButton(_ sender: Any) {
         //pop over with text field, static collection view, static tableview and submit button
+        
+        let nextView = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "customize")
+        
+        parentView?.present(nextView, animated: true)
 
     }
-
-
-
-
-
-
-
 }
 

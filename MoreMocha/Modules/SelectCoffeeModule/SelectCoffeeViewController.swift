@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import Kingfisher
 
-class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate {
+class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate, CustomizeDelegate {
     
     //Mark: - properties
     private let disposeBag = DisposeBag()
@@ -119,6 +119,26 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     
+    func passBackInfo(name: String, size: String, options: [String : String]) {
+        var boldText = ""
+        if name != "" {
+            boldText = name + ": "
+        }
+        
+        var stringForAttribution = size
+        for i in options {
+            stringForAttribution = stringForAttribution + ", \(i)"
+        }
+        
+        let formattedString = NSMutableAttributedString()
+        
+        formattedString
+            .bold(boldText)
+            .normal(stringForAttribution)
+        
+        coffeeDetails.attributedText = formattedString
+    }
+    
     
     //Mark: - autoTriggeredFunction
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -203,6 +223,13 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate 
     
     //Mark: - IBAction
     @IBAction func didFinishSelectingCoffee(_ sender: Any) {
+        let nextView = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "drinkselected".lowercased())
+        let navControler = UINavigationController(nibName: "Main", bundle: nil)
+        navControler.present(nextView, animated: true)
+
+        
+        
     }
 }
 
@@ -314,7 +341,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         indexPath.row == 0 ? cell.appear() : cell.disappear()
         
         if let thisSelectCoffeeItem = selectCoffeeModel?[indexPath.row] {
-            cell.bindData(selectCoffeeModel: thisSelectCoffeeItem)
+            cell.bindData(selectCoffeeModel: thisSelectCoffeeItem, parentView: self)
         }
         
         return cell
@@ -325,7 +352,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
 
 
 
-//Mark: - CollectionView Handling
+//Mark: - TabBarHandling Handling
 
 extension SelectCoffeeViewController: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

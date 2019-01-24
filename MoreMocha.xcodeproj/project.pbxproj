@@ -19,6 +19,9 @@
 		E3B3081221F907A00003E08B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081121F907A00003E08B /* FavoritesViewController.swift */; };
 		E3B3081621F908490003E08B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081521F908490003E08B /* ProfileViewController.swift */; };
 		E3B3081821F908580003E08B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081721F908580003E08B /* MoreViewController.swift */; };
+		E3B3081B21F9257E0003E08B /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081A21F9257E0003E08B /* CustomizeViewController.swift */; };
+		E3B3081D21F937920003E08B /* BoldMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081C21F937920003E08B /* BoldMaker.swift */; };
+		E3B3082021F93DCF0003E08B /* DrinkSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081F21F93DCF0003E08B /* DrinkSelectedViewController.swift */; };
 		E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */; };
 		E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */; };
 		E3D84B0421F3DFB300CA12E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D84B0221F3DFB300CA12E6 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		E3B3081121F907A00003E08B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E3B3081521F908490003E08B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E3B3081721F908580003E08B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		E3B3081A21F9257E0003E08B /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
+		E3B3081C21F937920003E08B /* BoldMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldMaker.swift; sourceTree = "<group>"; };
+		E3B3081F21F93DCF0003E08B /* DrinkSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectedViewController.swift; sourceTree = "<group>"; };
 		E3D84AFB21F3DFB300CA12E6 /* MoreMocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreMocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D84AFE21F3DFB300CA12E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				E3750F6221F4195E001690BE /* ColorConverter.swift */,
 				E3B307FF21F8A2710003E08B /* LableSizer.swift */,
 				E3B3080A21F9021F0003E08B /* NavigationHelper.swift */,
+				E3B3081C21F937920003E08B /* BoldMaker.swift */,
 			);
 			name = Helpers;
 			path = ../Helpers;
@@ -140,12 +147,30 @@
 		E3B3081021F907560003E08B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E3B3081E21F93D900003E08B /* DrinkSelectedModule */,
+				E3B3081921F925480003E08B /* CustomizeModule */,
 				E3750F6021F4192E001690BE /* SelectCoffeeModule */,
 				E3B3080C21F906D70003E08B /* FavoritesModule */,
 				E3B3080E21F907080003E08B /* ProfileModule */,
 				E3B3080D21F907020003E08B /* MoreModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		E3B3081921F925480003E08B /* CustomizeModule */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3081A21F9257E0003E08B /* CustomizeViewController.swift */,
+			);
+			path = CustomizeModule;
+			sourceTree = "<group>";
+		};
+		E3B3081E21F93D900003E08B /* DrinkSelectedModule */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3081F21F93DCF0003E08B /* DrinkSelectedViewController.swift */,
+			);
+			path = DrinkSelectedModule;
 			sourceTree = "<group>";
 		};
 		E3D84AF221F3DFB300CA12E6 = {
@@ -331,12 +356,15 @@
 			files = (
 				E3B3080021F8A2710003E08B /* LableSizer.swift in Sources */,
 				E3B3081821F908580003E08B /* MoreViewController.swift in Sources */,
+				E3B3081B21F9257E0003E08B /* CustomizeViewController.swift in Sources */,
+				E3B3082021F93DCF0003E08B /* DrinkSelectedViewController.swift in Sources */,
 				E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */,
 				E3D84B0121F3DFB300CA12E6 /* SelectCoffeeViewController.swift in Sources */,
 				E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */,
 				E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */,
 				E3B3081621F908490003E08B /* ProfileViewController.swift in Sources */,
 				E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */,
+				E3B3081D21F937920003E08B /* BoldMaker.swift in Sources */,
 				E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */,
 				E3B3080B21F9021F0003E08B /* NavigationHelper.swift in Sources */,
 				E3B3081221F907A00003E08B /* FavoritesViewController.swift in Sources */,
