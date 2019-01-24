@@ -80,8 +80,17 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
         }
         else {
             selectCoffeeCollectionView.isUserInteractionEnabled = true
-            coffeeTitle.text = selectCoffeeModel![0].title
             view.backgroundColor = hexToUIColor(selectCoffeeModel![0].backgroundColor)
+            if view.backgroundColor?.isLight ?? true {
+                coffeeTitle.text = selectCoffeeModel![0].title
+                coffeeTitle.textColor = #colorLiteral(red: 0.3219497204, green: 0.1653943658, blue: 0.0399389714, alpha: 1)
+                coffeeDetails.textColor = #colorLiteral(red: 0.3219497204, green: 0.1653943658, blue: 0.0399389714, alpha: 1)
+
+            } else {
+                coffeeTitle.textColor = UIColor.white
+                coffeeDetails.textColor = UIColor.white
+            }
+
             setSizes()
         }
     }
@@ -218,6 +227,15 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
     private func changeLayout(newCurrentCell: SelectCoffeeCollectionViewCell) {
         coffeeTitle.text = newCurrentCell.title
         view.backgroundColor = newCurrentCell.bgColor
+        if view.backgroundColor?.isLight ?? true {
+            coffeeTitle.text = selectCoffeeModel![0].title
+            coffeeTitle.textColor = #colorLiteral(red: 0.3219497204, green: 0.1653943658, blue: 0.0399389714, alpha: 1)
+            coffeeDetails.textColor = UIColor.white
+
+        } else {
+            coffeeTitle.textColor = UIColor.white
+            coffeeDetails.textColor = UIColor.white
+        }
     }
     
     
