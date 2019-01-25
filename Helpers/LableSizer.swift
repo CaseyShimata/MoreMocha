@@ -14,7 +14,10 @@ extension UIFont {
      Will return the best font conforming to the descriptor which will fit in the provided bounds.
      */
     static func bestFittingFontSize(for text: String, in bounds: CGRect, fontDescriptor: UIFontDescriptor, additionalAttributes: [NSAttributedString.Key: Any]? = nil) -> CGFloat {
-        let constrainingDimension = min(bounds.width, bounds.height)
+//        let constrainingDimension = min(bounds.width, bounds.height)
+
+        let constrainingDimension: CGFloat = 200.0
+
         let properBounds = CGRect(origin: .zero, size: bounds.size)
         var attributes = additionalAttributes ?? [:]
         
@@ -28,6 +31,7 @@ extension UIFont {
             let currentFrame = text.boundingRect(with: infiniteBounds, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: attributes, context: nil)
             
             if properBounds.contains(currentFrame) {
+
                 bestFontSize = fontSize
                 break
             }
@@ -54,8 +58,15 @@ extension UILabel {
         let deviceOrient = UIApplication.shared.statusBarOrientation
         
         if deviceOrient == .portrait {
+            print("final best size port")
+            print(currentFont.pointSize)
+
             return bestFittingFont
+            
         }
+        print("final best size land")
+        print(currentFont.pointSize)
+
         return UIFont(name: bestFittingFont.fontName, size: bestFittingFont.pointSize * 0.5)
     }
     

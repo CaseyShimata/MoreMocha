@@ -14,6 +14,7 @@
 		E3909CB021F446EC00AAF52D /* SelectCoffeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */; };
 		E3909CB221F4477800AAF52D /* SelectCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */; };
 		E3909CB721F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */; };
+		E3937DCF21FB307F0007E84A /* DeviceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3937DCE21FB307F0007E84A /* DeviceEnum.swift */; };
 		E3B3080021F8A2710003E08B /* LableSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B307FF21F8A2710003E08B /* LableSizer.swift */; };
 		E3B3080B21F9021F0003E08B /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3080A21F9021F0003E08B /* NavigationHelper.swift */; };
 		E3B3081221F907A00003E08B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3081121F907A00003E08B /* FavoritesViewController.swift */; };
@@ -40,6 +41,7 @@
 		E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeService.swift; sourceTree = "<group>"; };
 		E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoffeeModel.swift; sourceTree = "<group>"; };
 		E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCoffeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3937DCE21FB307F0007E84A /* DeviceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEnum.swift; sourceTree = "<group>"; };
 		E3B307FF21F8A2710003E08B /* LableSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableSizer.swift; sourceTree = "<group>"; };
 		E3B3080A21F9021F0003E08B /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		E3B3081121F907A00003E08B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				E3B3080A21F9021F0003E08B /* NavigationHelper.swift */,
 				E3B3081C21F937920003E08B /* BoldMaker.swift */,
 				E3B3082121FA2EC20003E08B /* ColorDarknessDetector.swift */,
+				E3937DCE21FB307F0007E84A /* DeviceEnum.swift */,
 			);
 			name = Helpers;
 			path = ../Helpers;
@@ -366,6 +369,7 @@
 				E3909CAE21F4461A00AAF52D /* SelectCoffeeViewModel.swift in Sources */,
 				E3750F6321F4195E001690BE /* ColorConverter.swift in Sources */,
 				E3B3081621F908490003E08B /* ProfileViewController.swift in Sources */,
+				E3937DCF21FB307F0007E84A /* DeviceEnum.swift in Sources */,
 				E3D84AFF21F3DFB300CA12E6 /* AppDelegate.swift in Sources */,
 				E3B3082221FA2EC20003E08B /* ColorDarknessDetector.swift in Sources */,
 				E3B3081D21F937920003E08B /* BoldMaker.swift in Sources */,
@@ -522,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L6W8T37HH;
 				INFOPLIST_FILE = "$(SRCROOT)/MoreMocha/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +546,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L6W8T37HH;
 				INFOPLIST_FILE = "$(SRCROOT)/MoreMocha/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

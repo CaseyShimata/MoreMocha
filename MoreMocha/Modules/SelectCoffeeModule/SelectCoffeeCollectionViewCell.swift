@@ -20,11 +20,8 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
 
     //Mark: - IBOutlet
     @IBOutlet weak var coffeeImageView: UIImageView!
-    @IBOutlet weak var cupShadowImage: UIImageView!
     @IBOutlet weak var customizeButton: UIButton!
 
-    @IBOutlet weak var cupShadowImageWidth: NSLayoutConstraint!
-    @IBOutlet weak var cupShadowImageHeight: NSLayoutConstraint!
     @IBOutlet weak var customizeWidth: NSLayoutConstraint!
     @IBOutlet weak var customizeHeight: NSLayoutConstraint!
     @IBOutlet weak var cupHeight: NSLayoutConstraint!
@@ -38,7 +35,6 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
         bgColor = hexToUIColor(selectCoffeeModel?.backgroundColor ?? "#ffffff")
 
         guard let imageUrlString = selectCoffeeModel?.imageUrl else {
-            cupShadowImage.alpha = 0.0
             coffeeImageView.image = UIImage(named: "No_image_available.jpg")
             return
         }
@@ -52,7 +48,6 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     public func bindParentUIInfo(cellWidth: CGFloat) {
         parentWidth = cellWidth
         adjustCoffeeImage()
-        adjustcupShadowImage()
         adjustCustomizeButton()
     }
 
@@ -62,31 +57,19 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
         cupWidth.constant = parentWidth!
         cupHeight.constant = parentWidth!
 //        coffeeImageView.alpha = 0.0
+        
+        let shadowPath = UIBezierPath(rect: CGRect(x: parentWidth! * 0.20, y: parentWidth! * 0.5, width: parentWidth! * 0.80, height: parentWidth! * 0.95))
+        
+        coffeeImageView.layer.masksToBounds = false
+        coffeeImageView.layer.shadowColor = UIColor.black.cgColor
+        coffeeImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        coffeeImageView.layer.shadowOpacity = 0.3
+        
+        coffeeImageView.layer.shadowRadius = parentWidth! * 0.16
+        coffeeImageView.layer.shadowPath = shadowPath.cgPath
+
     }
-
-
-
-    public func adjustcupShadowImage() {
-        let heightAndWidth = parentWidth! * 0.40
-        cupShadowImage.backgroundColor = bgColor ?? UIColor.brown
-        cupShadowImage.clipsToBounds = false
-        cupShadowImage.layer.cornerRadius = heightAndWidth / 2
-        cupShadowImageWidth.constant = heightAndWidth
-        cupShadowImageHeight.constant = heightAndWidth
-
-
-        let shadowPath = UIBezierPath(rect: CGRect(x: parentWidth! * -0.075, y: parentWidth! * -0.08, width: parentWidth! * 0.65, height: parentWidth! * 0.85))
-
-        cupShadowImage.layer.masksToBounds = false
-        cupShadowImage.layer.shadowColor = UIColor.black.cgColor
-        cupShadowImage.layer.shadowOffset = CGSize(width: 0, height: 0)
-
-        cupShadowImage.layer.shadowOpacity = 0.6
-
-        cupShadowImage.layer.shadowRadius = parentWidth! / 4
-        cupShadowImage.layer.shadowPath = shadowPath.cgPath
-    }
-
 
     public func adjustCustomizeButton() {
         customizeButton.clipsToBounds = false

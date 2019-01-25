@@ -104,20 +104,23 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
         if deviceOrient == .portrait {
             if portraitSizedTitle == nil {
                 portraitSizedTitle = coffeeTitle.fitTextToBounds()?.pointSize
+                print("set port")
+                print(portraitSizedTitle)
+
             }
             if portraitSizedDetail == nil {
                 portraitSizedDetail = coffeeDetails.fitTextToBounds()?.pointSize
             }
             coffeeTitle.font = UIFont(name: coffeeTitle.font.fontName, size: portraitSizedTitle ?? 10.0)
             coffeeDetails.font = UIFont(name: coffeeDetails.font.fontName, size: portraitSizedDetail ?? 10.0)
-            print("port")
         }
             
         else if deviceOrient  == .landscapeLeft || deviceOrient == .landscapeRight {
-            print("land")
 
             if landScapeSizedTitle == nil {
                 landScapeSizedTitle = coffeeTitle.fitTextToBounds()?.pointSize ?? 10.0
+                print("set land")
+                print(landScapeSizedTitle)
             }
             if landScapeSizedDetail == nil {
                 landScapeSizedDetail = coffeeDetails.fitTextToBounds()?.pointSize ?? 10.0
@@ -225,17 +228,16 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
     
     
     private func changeLayout(newCurrentCell: SelectCoffeeCollectionViewCell) {
-        coffeeTitle.text = newCurrentCell.title
         view.backgroundColor = newCurrentCell.bgColor
         if view.backgroundColor?.isLight ?? true {
-            coffeeTitle.text = selectCoffeeModel![0].title
             coffeeTitle.textColor = #colorLiteral(red: 0.3219497204, green: 0.1653943658, blue: 0.0399389714, alpha: 1)
-            coffeeDetails.textColor = UIColor.white
+            coffeeDetails.textColor = #colorLiteral(red: 0.3219497204, green: 0.1653943658, blue: 0.0399389714, alpha: 1)
 
         } else {
             coffeeTitle.textColor = UIColor.white
             coffeeDetails.textColor = UIColor.white
         }
+        self.coffeeTitle.text = newCurrentCell.title
     }
     
     
@@ -287,9 +289,16 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         ///.068333, .22667, .41, .22667, .068333
         
         var sizeMultiplier: CGFloat = 0.41
-        let halfCupSize = minWidth * sizeMultiplier / 2
-        var cellSpacingMultiplier: CGFloat = screenWidth * 0.22667 + halfCupSize
-        var offSet = screenWidth * 0.295 + halfCupSize
+        let sixthCup = minWidth * sizeMultiplier / 6
+        var cellSpacingMultiplier: CGFloat = screenWidth * 0.22667 + sixthCup * 3
+        var offSet = sixthCup * 4 + (screenWidth * 0.22667)
+
+        if UIDevice().type.rawValue.contains("iPad") {
+            offSet = sixthCup * 3 + (screenWidth * 0.22667)
+            cellSpacingMultiplier = screenWidth * 0.22667 + sixthCup
+        }
+
+
         
         if UIApplication.shared.statusBarOrientation == .portrait {
 //        if UIDevice.current.orientation == .portrait {
@@ -304,7 +313,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         cellSpacing = cellSpacingMultiplier
         cellOffset = offSet
 
-        selectCoffeeCollectionView.collectionViewLayout.invalidateLayout()
+    selectCoffeeCollectionView.collectionViewLayout.invalidateLayout()
         
         resizeText()
         scrollToIndexAndAnimate()
@@ -380,7 +389,7 @@ extension SelectCoffeeViewController: UITabBarDelegate {
         let nextView = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: viewTitle.lowercased())
         
-        present(nextView, animated: true)
+        present(nextView, animated: false)
         
     }
     

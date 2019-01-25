@@ -42,7 +42,7 @@ extension ProfileViewController: UITabBarDelegate {
         let nextView = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: viewTitle.lowercased())
         
-        present(nextView, animated: true)
+        present(nextView, animated: false)
         
     }
     

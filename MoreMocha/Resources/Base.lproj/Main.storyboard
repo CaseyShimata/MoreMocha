@@ -85,13 +85,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5A-AY-y2x" userLabel="cupShadowImage">
-                                                                    <rect key="frame" x="45" y="110" width="60" height="60"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="60" id="JSf-aM-g8p"/>
-                                                                        <constraint firstAttribute="height" constant="60" id="X2c-tc-K1U"/>
-                                                                    </constraints>
-                                                                </imageView>
                                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jacobs-wonderbar_46033470694_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-m2-zco">
                                                                     <rect key="frame" x="8" y="28" width="134" height="161"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,17 +115,12 @@
                                                             <constraint firstItem="DxD-m2-zco" firstAttribute="leading" secondItem="CJP-A6-lg9" secondAttribute="leadingMargin" id="3Ho-R3-DaL"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="DxD-m2-zco" secondAttribute="trailing" id="D7z-Cy-8Vf"/>
                                                             <constraint firstItem="DxD-m2-zco" firstAttribute="top" secondItem="CJP-A6-lg9" secondAttribute="topMargin" id="EPd-d3-bM8"/>
-                                                            <constraint firstItem="G5A-AY-y2x" firstAttribute="bottom" secondItem="DxD-m2-zco" secondAttribute="bottom" multiplier="0.9" id="Fig-EM-UIJ"/>
                                                             <constraint firstItem="urV-qp-Bag" firstAttribute="centerX" secondItem="DxD-m2-zco" secondAttribute="centerX" multiplier="1.32" id="TJ0-Nt-iZz"/>
-                                                            <constraint firstItem="G5A-AY-y2x" firstAttribute="centerX" secondItem="DxD-m2-zco" secondAttribute="centerX" id="eVa-Uj-e18"/>
                                                             <constraint firstItem="urV-qp-Bag" firstAttribute="centerY" secondItem="DxD-m2-zco" secondAttribute="centerY" multiplier="1.55" id="sTW-6n-Kck"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="coffeeImageView" destination="DxD-m2-zco" id="t43-Be-5ct"/>
                                                             <outlet property="cupHeight" destination="gA4-9U-vHx" id="8tD-Fr-pur"/>
-                                                            <outlet property="cupShadowImage" destination="G5A-AY-y2x" id="k02-SE-MAs"/>
-                                                            <outlet property="cupShadowImageHeight" destination="X2c-tc-K1U" id="Wsc-xX-Ura"/>
-                                                            <outlet property="cupShadowImageWidth" destination="JSf-aM-g8p" id="UjL-Es-fQG"/>
                                                             <outlet property="cupWidth" destination="7V6-vq-UV8" id="LoA-wO-plE"/>
                                                             <outlet property="customizeButton" destination="urV-qp-Bag" id="6bB-JR-3Dc"/>
                                                             <outlet property="customizeHeight" destination="qNI-dv-okd" id="YvY-od-0We"/>
@@ -203,6 +191,14 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemColor">
+                                                        <color key="value" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UJ0-f9-OOE"/>
                                                 </connections>
@@ -438,6 +434,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemColor">
+                                                <color key="value" red="0.60336690989999997" green="0.60336690989999997" blue="0.60336690989999997" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="Ecb-sO-XjS" id="Don-q0-4yn"/>
                                         </connections>
@@ -491,6 +495,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemColor">
+                                                <color key="value" red="0.60336690989999997" green="0.60336690989999997" blue="0.60336690989999997" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="og5-hl-8Nb" id="KL7-VV-P2O"/>
                                         </connections>
@@ -544,6 +556,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedImageTintColor" red="0.60336690989847708" green="0.60336690989847708" blue="0.60336690989847708" alpha="0.63971532534246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemColor">
+                                                <color key="value" red="0.60336690989999997" green="0.60336690989999997" blue="0.60336690989999997" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="qUF-yu-g4C" id="paE-qW-w9J"/>
                                         </connections>
