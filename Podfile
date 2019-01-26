@@ -14,6 +14,9 @@ target 'MoreMocha' do
   pod 'SVProgressHUD'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'ACBRadialCollectionView'
+
+
   # Pods for MoreMocha
 
 

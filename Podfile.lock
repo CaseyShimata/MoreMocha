@@ -1,4 +1,5 @@
 PODS:
+  - ACBRadialCollectionView (2.0)
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
@@ -103,6 +104,7 @@ PODS:
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - ACBRadialCollectionView
   - CodableFirebase
   - Firebase/Core
   - Firebase/Firestore
@@ -115,6 +117,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ACBRadialCollectionView
     - BoringSSL
     - CodableFirebase
     - Firebase
@@ -140,6 +143,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ACBRadialCollectionView: 28f551dacb1aa80851ec2875efa91a10b3003e1a
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   CodableFirebase: 4b865f58c583a6c0ef8c81c6b12c6bf15ebd9181
   Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
@@ -164,6 +168,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: fcf7c7718becbd470fbfb1fcf1899689940752cf
+PODFILE CHECKSUM: 6a1ca263ccfcd2ef00851a2bcd1ad1ed4b1afc12
 
 COCOAPODS: 1.5.3

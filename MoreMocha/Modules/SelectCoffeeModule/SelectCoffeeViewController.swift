@@ -8,8 +8,12 @@
 import UIKit
 import RxSwift
 import Kingfisher
+import ACBRadialCollectionView
+
 
 class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate, CustomizeDelegate {
+    
+    
     
     //Mark: - properties
     private let disposeBag = DisposeBag()
@@ -25,7 +29,6 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
     
     fileprivate var selectCoffeeModel: [SelectCoffeeModel]?
 
-    
     
     //Mark: - IBOutlets
     @IBOutlet weak var coffeeTitle: UILabel!
@@ -45,12 +48,14 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         selectCoffeeViewModel = SelectCoffeeViewModel()
+        selectCoffeeCollectionView.collectionViewLayout = SelectCoffeeCollectionViewFlow()
+        
         requestCoffeedata()
     }
-
+    
 
     private func requestCoffeedata() {
-            tabBar.selectedItem = self.tabBar.items![1]
+        tabBar.selectedItem = self.tabBar.items![1]
 
         selectCoffeeViewModel?.requestCoffee().subscribe(onNext: { (selectCoffeeModel) in
             self.selectCoffeeModel = selectCoffeeModel
@@ -73,6 +78,7 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
     
     
     private func selectCoffeeCollectionConfigration() {
+
         selectCoffeeCollectionView.reloadData()
         selectCoffeeCollectionView.isScrollEnabled = false
         if selectCoffeeModel?.isEmpty ?? true {
@@ -94,7 +100,6 @@ class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate,
             setSizes()
         }
     }
-    
     
     private func resizeText() {
         
@@ -279,8 +284,7 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
     private func setSizes() {
         let screenWidth = view.frame.width
         let minWidth = min(screenWidth, view.frame.height)
-        
-        
+            
         ///what percent of screen is:
         ///1/6cup, gap, cup, gap, 1/6 cup
         /// .05 .225, .45, .225, .05
@@ -313,7 +317,8 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         cellSpacing = cellSpacingMultiplier
         cellOffset = offSet
 
-    selectCoffeeCollectionView.collectionViewLayout.invalidateLayout()
+
+        selectCoffeeCollectionView.collectionViewLayout.invalidateLayout()
         
         resizeText()
         scrollToIndexAndAnimate()
@@ -373,6 +378,12 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         
         return cell
     }
+    
+    
+    
+    
+    
+    
 }
 
 

@@ -1,0 +1,6 @@
+framework module ACBRadialCollectionView {
+  umbrella header "ACBRadialCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
