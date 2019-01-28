@@ -97,11 +97,14 @@ class SelectCoffeeCollectionViewCell: UICollectionViewCell {
     //Mark: - IBAction
     @IBAction func didSelectCustomizeButton(_ sender: Any) {
         //pop over with text field, static collection view, static tableview and submit button
+        guard let parent = parentView else {return}
         
         let nextView = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "customize")
         
-        parentView?.present(nextView, animated: true)
+        (nextView as? CustomizeViewController)?.delegate = parent as? CustomizeDelegate
+        
+        parent.present(nextView, animated: true)
 
     }
 }

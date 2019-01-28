@@ -14,10 +14,9 @@ protocol CustomizeDelegate {
 
 class CustomizeViewController: UIViewController {
 
-    
     //Mark: - Properties
     public var delegate: CustomizeDelegate?
-    private var size = "smaßll"
+    private var size = "small"
     private var options = [String: String]()
     
     private var choices = ["cream","sugar","splenda","carmel sauce","chocolate sauce","extra shot"]
@@ -25,10 +24,8 @@ class CustomizeViewController: UIViewController {
     
     //Mark: - IBOutlet
     @IBOutlet weak var name: UITextField!
-    
     @IBOutlet weak var small: UIButton!
     @IBOutlet weak var medium: UIButton!
-    
     @IBOutlet weak var large: UIButton!
     
     
@@ -40,11 +37,11 @@ class CustomizeViewController: UIViewController {
     
     //Mark: - functions
     private func buttonClicked(_ button: UIButton?) {
-        small.backgroundColor = UIColor.yellow
-        small.backgroundColor = UIColor.orange
-        small.backgroundColor = UIColor.red
+        small.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+        medium.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        large.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         size = button?.titleLabel?.text ?? "small"
-        button?.backgroundColor = UIColor.green
+        button?.backgroundColor = #colorLiteral(red: 0.1960784314, green: 0.8431372549, blue: 0.2941176471, alpha: 1)
     }
     
     

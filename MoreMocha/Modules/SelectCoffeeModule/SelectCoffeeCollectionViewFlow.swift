@@ -16,8 +16,8 @@ class SelectCoffeeCollectionViewFlow: UICollectionViewFlowLayout {
         super.init()
         
         scrollDirection = .horizontal
-        minimumLineSpacing = 40
-        itemSize = CGSize(width: 150, height: 150)
+        minimumLineSpacing = 0
+        itemSize = CGSize(width: 0, height: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,8 +34,9 @@ class SelectCoffeeCollectionViewFlow: UICollectionViewFlowLayout {
         for attributes in rectAttributes where attributes.frame.intersects(visibleRect) {
             let distance = visibleRect.midX - attributes.center.x
             let normalizedDistance = distance / activeDistance
-            
+
             if distance.magnitude < activeDistance {
+
                 let zoom = 1 + zoomFactor * (1 - normalizedDistance.magnitude)
                 attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1)
                 attributes.zIndex = Int(zoom.rounded())

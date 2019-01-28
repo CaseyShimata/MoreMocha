@@ -100,7 +100,7 @@
 				E3D84B0021F3DFB300CA12E6 /* SelectCoffeeViewController.swift */,
 				E3937DF021FC08A20007E84A /* SelectCoffeeCollectionViewFlow.swift */,
 				E3909CB621F4891C00AAF52D /* SelectCoffeeCollectionViewCell.swift */,
-				E3909CBC21F6537200AAF52D /* SlelectCoffeeDataHandling */,
+				E3909CBC21F6537200AAF52D /* SelectCoffeeDataHandling */,
 			);
 			path = SelectCoffeeModule;
 			sourceTree = "<group>";
@@ -119,14 +119,14 @@
 			path = ../Helpers;
 			sourceTree = "<group>";
 		};
-		E3909CBC21F6537200AAF52D /* SlelectCoffeeDataHandling */ = {
+		E3909CBC21F6537200AAF52D /* SelectCoffeeDataHandling */ = {
 			isa = PBXGroup;
 			children = (
 				E3909CAD21F4461A00AAF52D /* SelectCoffeeViewModel.swift */,
 				E3909CAF21F446EC00AAF52D /* SelectCoffeeService.swift */,
 				E3909CB121F4477800AAF52D /* SelectCoffeeModel.swift */,
 			);
-			path = SlelectCoffeeDataHandling;
+			path = SelectCoffeeDataHandling;
 			sourceTree = "<group>";
 		};
 		E3B3080C21F906D70003E08B /* FavoritesModule */ = {

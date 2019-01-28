@@ -11,9 +11,7 @@ import Kingfisher
 import ACBRadialCollectionView
 
 
-class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate, CustomizeDelegate {
-    
-    
+class SelectCoffeeViewController: UIViewController, UIGestureRecognizerDelegate, CustomizeDelegate {    
     
     //Mark: - properties
     private let disposeBag = DisposeBag()
@@ -340,7 +338,25 @@ extension SelectCoffeeViewController: UICollectionViewDataSource, UICollectionVi
         }
     }
     
-    
+//    func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        let rectAttributes = layoutAttributesForElements(in: rect)!.map { $0.copy() as! UICollectionViewLayoutAttributes }
+//        let visibleRect = CGRect(origin: selectCoffeeCollectionView.contentOffset, size: selectCoffeeCollectionView.frame.size)
+//        
+//        // Make the cells be zoomed when they reach the center of the screen
+//        for attributes in rectAttributes where attributes.frame.intersects(visibleRect) {
+//            let distance = visibleRect.midX - attributes.center.x
+//            let normalizedDistance = distance / 200
+//            
+//            if distance.magnitude < 200 {
+//                let zoom = 1 + 0.3 * (1 - normalizedDistance.magnitude)
+//                attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1)
+//                attributes.zIndex = Int(zoom.rounded())
+//            }
+//        }
+//        
+//        return rectAttributes
+//    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         ///space too wide(big) (pad land) --- possible because pad width ratio bigger ---- only if launched in landscape initially .. same with iphone 5s
         return cellSpacing
