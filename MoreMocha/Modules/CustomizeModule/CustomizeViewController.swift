@@ -68,6 +68,7 @@ class CustomizeViewController: UIViewController {
         buttonClicked(sender as? UIButton)
     }
     
+    ///dismiss key board on touch outside or enter
 
 }
 
